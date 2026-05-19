@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Brief"
+  short_description: "Source-grounded research briefs and decision memos."
+  default_prompt: "Use $research-brief to produce a source-grounded research brief with claims, evidence, recommendations, risks, and next actions."

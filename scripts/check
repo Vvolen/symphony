@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+status=0
+
+check_no_secret_placeholders() {
+  if rg -n --hidden --glob '!*.png' --glob '!*.mp4' --glob '!*.jpg' --glob '!*.jpeg' --glob '!*.gif' --glob '!scripts/check' \
+    '(sk-[A-Za-z0-9_-]{20,}|lin_api_[A-Za-z0-9_-]+|FIRECRAWL_API_KEY=.+\S|BEGIN (RSA|OPENSSH|EC|PRIVATE) KEY)' \
+    .; then
+    echo "Potential secret-like content found. Review before committing." >&2
+    return 1
+  fi
+}
+
+check_required_docs() {
+  local files=(
+    AGENTS.md
+    .env.example
+    docs/governance/README.md
+    docs/governance/environment.md
+    docs/governance/tools-and-mcp.md
+    docs/governance/long-horizon-work.md
+    docs/research/README.md
+    docs/research/templates/research-brief.md
+    .agents/skills/research-brief/SKILL.md
+  )
+
+  for file in "${files[@]}"; do
+    if [[ ! -f "$file" ]]; then
+      echo "Missing required scaffold file: $file" >&2
+      return 1
+    fi
+  done
+}
+
+check_required_docs || status=1
+check_no_secret_placeholders || status=1
+
+exit "$status"
