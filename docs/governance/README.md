@@ -21,3 +21,8 @@ Agentic systems become powerful when their instructions, tools, evidence, and st
 ## Default stance
 
 Start narrow, make the artifact searchable, and only add persistent power after the safety boundary is clear.
+
+
+## Usage note
+
+Run checks as `./scripts/check` (or `bash scripts/check`) from any directory. The script resolves the repo root automatically.
