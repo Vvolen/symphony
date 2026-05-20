@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+printf 'Symphony research hub doctor\n'
+printf '=============================\n'
+printf 'cwd: %s\n' "$(pwd)"
+printf 'git branch: %s\n' "$(git branch --show-current 2>/dev/null || echo unknown)"
+printf '\nTools:\n'
+for tool in git rg python3 python bash; do
+  if command -v "$tool" >/dev/null 2>&1; then
+    printf '  [ok] %s -> %s\n' "$tool" "$(command -v "$tool")"
+  else
+    printf '  [missing] %s\n' "$tool"
+  fi
+done
+printf '\nConfigured env names only, not values:\n'
+env | cut -d= -f1 | sort | rg '^(FIRECRAWL|HERMES|LINEAR|OPENAI|SYMPHONY|SOURCE_REPO|CODEX)' || true

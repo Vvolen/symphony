@@ -1,0 +1,34 @@
+# Example only. Copy relevant sections into ~/.codex/config.toml or a trusted project-scoped .codex/config.toml.
+# Keep real tokens in environment variables or your platform's secret manager.
+
+[features]
+# Enable only in clients/versions that support it.
+goals = true
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp@0.5.0"]
+enabled = false
+default_tools_approval_mode = "prompt"
+
+[mcp_servers.firecrawl]
+# Replace with the official Firecrawl MCP package or your gateway command after verification.
+command = "npx"
+args = ["-y", "firecrawl-mcp@1.4.2"]
+env_vars = ["FIRECRAWL_API_KEY", "FIRECRAWL_API_URL"]
+enabled = false
+default_tools_approval_mode = "prompt"
+
+[mcp_servers.tool_gateway]
+# Preferred shape for a large catalog: one governed gateway with discovery and allow-listed routing.
+command = "node"
+args = ["/path/to/mcp-gateway/server.js"]
+enabled = false
+enabled_tools = ["list_tools", "describe_tool", "invoke_readonly"]
+default_tools_approval_mode = "prompt"
+startup_timeout_sec = 20
+tool_timeout_sec = 120
+
+# Supply-chain safety:
+# - Prefer exact version pins (as shown above) over floating latest tags.
+# - For stricter reproducibility, prefer locally vendored/locked dependencies.
