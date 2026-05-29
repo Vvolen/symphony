@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+resolve_repo_root() {
+  if git_root="$(git rev-parse --show-toplevel 2>/dev/null)"; then
+    printf '%s\n' "$git_root"
+    return 0
+  fi
+
+  local script_dir
+  script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+  printf '%s\n' "$(cd "$script_dir/.." && pwd)"
+}
+
+repo_root="$(resolve_repo_root)"
+cd "$repo_root"
+
+required_headings=(
+  "## Objective"
+  "## Context and sources"
+  "## Actions"
+  "## Files changed"
+  "## Validation"
+  "## Risks / unknowns"
+  "## Handoff"
+)
+
+status=0
+shopt -s nullglob
+run_logs=(docs/memory/runs/*.md)
+
+if [[ "${#run_logs[@]}" -eq 0 ]]; then
+  echo "No memory run logs found under docs/memory/runs" >&2
+  exit 1
+fi
+
+for file in "${run_logs[@]}"; do
+  for heading in "${required_headings[@]}"; do
+    if ! rg -q "^${heading}$" "$file"; then
+      echo "Missing heading '${heading}' in ${file}" >&2
+      status=1
+    fi
+  done
+done
+
+exit "$status"

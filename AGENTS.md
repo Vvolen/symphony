@@ -28,6 +28,7 @@ Use the "standing on the shoulders of giants" pattern for research-heavy work:
 - `.codex/` stores Codex-oriented local configuration examples and repo skills.
 - `docs/governance/` stores operating policy for agents, scripts, secrets, tools, and long-horizon runs.
 - `docs/research/` stores sourced research briefs and templates.
+- `docs/systems/` stores reusable architecture modules, playbooks, and procurement candidates.
 - `scripts/` stores low-risk helper scripts for diagnostics and checks.
 
 ## Validation

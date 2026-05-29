@@ -1,0 +1,25 @@
+name: Research Hub Check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - work
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scaffold:
+    name: Validate research hub scaffold
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        # Pin official action to the current v4 tag commit for reproducibility.
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - name: Run scaffold checks
+        run: ./scripts/check
+      - name: Run memory checks
+        run: ./scripts/memory-check

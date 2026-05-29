@@ -23,6 +23,10 @@ Agentic systems become powerful when their instructions, tools, evidence, and st
 
 Start narrow, make the artifact searchable, and only add persistent power after the safety boundary is clear.
 
+## Systems catalog
+
+Use `docs/systems/INDEX.md` for reusable architecture modules, procurement candidates, and long-horizon hydration scaffolds.
+
 
 ## Usage note
 

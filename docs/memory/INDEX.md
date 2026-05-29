@@ -18,12 +18,14 @@ This is the shared memory map for agents working in this repository.
 - Handoff queue: `docs/memory/handoff.md`
 - Decision log: `docs/memory/decisions/`
 - Run journals: `docs/memory/runs/`
+- Systems catalog: `docs/systems/INDEX.md`
 
 ## Recent runs
 
+- 2026-05-29: mine Copilot for Eclipse and add systems catalog (see `runs/2026-05-29-copilot-eclipse-systems-catalog.md`)
 - 2026-05-24: bootstrap shared-memory framework (see `runs/2026-05-24-shared-memory-bootstrap.md`)
 
 ## Open threads
 
 - Validate `/goal` availability in local Codex app/CLI and document exact behavior.
-- Add a memory linter/check script for required sections in run logs.
+- Decide neutral vs runtime-specific agent profile format for custom agent constellations.

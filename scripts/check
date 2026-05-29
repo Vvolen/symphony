@@ -44,6 +44,12 @@ check_required_docs() {
     docs/research/README.md
     docs/research/templates/research-brief.md
     .agents/skills/research-brief/SKILL.md
+    docs/systems/INDEX.md
+    docs/systems/repo-hydration-architecture.md
+    docs/systems/github-actions-and-supabase-playbook.md
+    .github/copilot-instructions.md
+    .github/workflows/research-hub-check.yml
+    scripts/memory-check
   )
 
   for file in "${files[@]}"; do
@@ -61,6 +67,7 @@ require_tool rg || status=1
 
 if [[ "$status" -eq 0 ]]; then
   check_required_docs || status=1
+  ./scripts/memory-check || status=1
   check_no_secret_placeholders || status=1
 fi
 
