@@ -1,0 +1,2934 @@
+
+
+
+Paper clip -
+
+
+
+Rate limits
+https://youtu.be/sncxStbRSwI?si=2LxlXpl8uyluJ9aD
+
+https://youtu.be/49V-5Ock8LU?si=WDH6l5v8GBK3z1Oq
+
+
+AI workflow
+https://youtu.be/IlhTbhR6el0?si=z8HhhQQwfN6KOh-x
+
+
+Hermes
+https://youtu.be/5PLDovsqKaQ?si=W80mtoV1lvCvGezI
+
+
+
+Linear
+{"base":[16.694577421254564,0,6.405062808206049],"accent":[52.45726134436825,26.724849079758105,211.38643904281744],"contrast":100}
+
+
+This is HUGE..! I haven't been doing this! 🤦‍♂️🤦‍♂️🤦‍♂️🤦‍♂️
+https://youtu.be/l5Diqeoffa4?si=ME-Vm9xneb6WBBwL
+
+5 agentic designs
+https://youtu.be/38t5UBCa4OI?si=Wu48ry9sqs-i7DvZ
+
+How to stop hitting Claude Code usage limits.
+https://youtu.be/9ToOfgZ4qqQ?si=aKzo4w-uAm6KLjr7
+
+Self-improving skills.
+https://youtu.be/bc4NrE0cOE0?si=i5Ej-2ZI05ZSLIQN
+
+Second Brain. Claude Cowork plus Obsidian.
+https://youtu.be/qo4YZvC1q5I?si=1CGrSiKLSU4r1X8C
+
+Skills 2.0. How to use skills like the 1%
+https://youtu.be/3cYusISFc9s?si=aQ4LvHI7g4lamY2u
+
+
+Claude's Managed Agents Video by Anthropoc itself. Great context, especially what he says at the end, you defined what done looks like and Claude works till it gets there. And he mentions a couple tools that are worth checking out as well. Lighthouse and something else. And the configuration he has is interesting. One agent watching the other agent. There's a lot packed into this like four minute video. This is really good.
+https://youtu.be/NLWiIj47IdI?si=qYvsPJbWccVH3BdD
+
+
+1 - How to use Cloud Cowork better than anyone, apparently. And 2 - top three ways to make money with AI in 2026, apparently. LOL. Let's see.
+1 - https://youtu.be/HTu1OGWAn5w?si=rxQxR5Kgx3CLaq8t
+
+2 - https://youtu.be/XYHqQOX4ivs?si=cJLAGS8Or09lgf2n
+
+
+Two-hour video on Claude Cowork. Full course.
+https://youtu.be/2HyBA-wkWsA?si=gfd3qgKHGqRYWg7D
+
+
+
+https://promptcowboy.ai
+
+https://relevanceai.com/?via=ben
+
+https://sendspark.com/?via=ben-ai
+
+https://www.apify.com/?fpr=benai
+
+
+
+
+
+https://github.com/Polymarket/agents
+
+https://github.com/OpenBMB/VoxCPM
+
+https://github.com/NousResearch/hermes-agent-self-evolution
+
+https://github.com/forrestchang/andrej-karpathy-skills
+
+https://t.co/vol59RnMUW
+
+
+
+Jake Van Cleef. I need to replicate this guy's methodologies immediately.
+
+https://youtube.com/@jevanclief?si=u4e4su90vXwXDLcc
+
+https://youtu.be/ib2m9HVX7as?si=Hm_ws3pa6VuXvXE6
+
+https://youtu.be/80qWFscUG3w?si=vC63X5k3KPxrk0EC
+
+https://youtu.be/DJe5ahNAdjk?si=iUeHq8ZTLoL3a-xF
+
+https://youtu.be/erV_8yrGMA8?si=1lXVx9hySY0CO69z
+
+
+
+
+
+Top 5 plugins for Claude Code
+	•	  Context7 - live docs inside Claude
+	•	https://github.com/upstash/context7
+	•	  Frontend Design - production-grade Ul, not generic Al output https://claude.com/plugins/frontend-design
+	•	  Figma - design to code directly
+	•	https://github.com/figma/mcp-server-guide
+	•	  Playwright — real browser testing by Claude https://github.com/microsoft/playwright-mcp
+	•	  Supabase - store product data without extra infrastructure https://supabase.com/docs/guides/getting-started/mcp
+
+
+
+
+
+
+
+
+
+
+trader connected Claude to Polymarket and made $390,000 in three weeks trading BTC 5-min
+
+weekly $151,843
+daily $9,549
+
+no magic. he just followed a guide:
+
+> installed poly-MCP and claude became his trading terminal
+> connected GPT Researcher - the bot finds patterns and events on its own
+> built automation with n8n and everything runs without him
+> taught claude to read the spread between Polymarket and Coinbase
+> launched Huginn, the terminal runs 24/7
+> added Apprise - alerts go wherever he needs them
+
+result: while he was living his life, the bot made 19,000+ predictions with a 60% wr and brought in nearly $10k just yesterday
+
+his profile: polymarket.com/@0xe1d6b51521b…
+
+just read the article, send it to your Claude and stop trading manually
+
+if you have questions, I'll answer everything
+
+don't waste your time.
+
+
+
+
+
+
+
+
+the shift from scan-mispricing to a fully composed trade loop is exactly how you move from being a retail trader to a desk operator. most people are manually refreshing the politics tab but the alpha in 2026 is sitting in the strait of hormuz and oil bracket markets where the spreads are wide and the retail crowd is too scared to touch them.
+
+the unlimited opus 4.6 on ampere's pro tier is the real engine here. a single /morning-brief run that pulls order books via the clob v2 api for 800+ markets is a massive context injection. on a standard metered plan, you'd burn $40 in tokens just on the initial scan before you even found a mispricing. 
+
+one big warning for the /killswitch skill: watch the new dynamic taker fees that rolled out on march 30. cryptocurrency and economics markets now peak at 1.8% and 1.5% fees respectively when probabilities are near 50/50. if you’re using a fractional kelly strategy, you need to bake those taker fees into your /size-position logic or your edge will be eaten by the platform before you exit.
+
+the .claude/ context for these skills should also include your specific golden odds sources. it’s the difference between a bot that just guesses and one that has a grounded world model to cross-check against the clob midpoint.
+
+
+
+
+
+
+
+
+
+
+
+top 5 Claude Skills you can build for Polymarket today
+
+1. /scan-mispricing
+   pulls active markets via the public Polymarket CLOB API
+   filters by minimum liquidity threshold
+   compares implied probability against external odds you trust
+   returns only contracts where the gap clears your edge requirement
+   one command instead of browsing 800 markets manually
+
+2. /size-position
+   takes a contract + your edge estimate + bankroll
+   outputs fractional Kelly size with a hard cap (4% per trade is a sane default)
+   refuses to size anything below 2% edge after Polymarket fees
+   no more "let me just put $200 on this vibe"
+
+3. /track-wallet
+   feeds in any Polymarket address
+   pulls trade history from the CLOB
+   computes win rate, average hold time, category breakdown, ROI per trade
+   tells you in seconds if it's a bot, a degen, or someone who actually has edge
+
+4. /killswitch
+   monitors your open positions
+   auto-flags anything down past your stop threshold
+   auto-flags anything that hit your take-profit threshold
+   the rule that separates the top 30 wallets from everyone else: they actually exit
+
+5. /morning-brief
+   runs once a day on a schedule
+   scans every category overnight via the CLOB
+   delivers one message: top edges + wallets that moved size + one macro flag
+   replaces a feed full of noise with one focused brief
+
+6. /copy-the-pros
+   the truth is most of us aren't going to build all 5 of these from scratch
+   so i just copy the wallets that already do this every day
+   Kreo tracks the top Polymarket wallets and lets you mirror their trades
+   the only paid tool i actually keep - it makes more than it costs
+   → t.me/KreoPolyBot?st…
+
+the killer feature: skills compose
+/scan-mispricing → /track-wallet on the wallets behind the price → /size-position on the survivors
+one conversation, full trade loop
+
+once you have this set up Claude stops being a chatbot
+it becomes a desk
+
+like + bookmark  you'll need this
+
+
+
+
+
+
+
+
+call me super annoying but..I will keep repeating this…
+
+Claude + SEO is going to make more millionaires in 2026 than Wall Street has in the last decade.
+
+don’t bookmark this if it crosses your timeline.
+
+just paste this entire thing into Claude. 
+thank me later.
+
+
+
+
+
+Paperclip: Open Source Human Control Plane for AI Labor — Dotta Bippa - YouTube
+
+MiroFish Full Tutorial — Predict Any Scenario With AITech With TimNew14K views
+
+https://youtu.be/ZMDXs59Ntjc
+
+
+
+#Links #YT #Assets_for_Agents 
+
+———
+
+
+Ben Goertzle
+https://youtu.be/6n2IKTRSvlI?si=MUxtMojv5T51UXOM
+
+
+
+Jake van clief 
+https://youtu.be/hALln9wrrQo?si=x4PzC8EYMiNhpxg3
+
+
+
+AI OS
+https://youtu.be/bCljOfCH8Ms?si=RRqSM1c0JTbf-P4z
+
+
+
+
+Great video on new codex symphony tool! 🤔
+https://youtu.be/5p6h23Md4Zw?si=Uccw-pgCovPvCzo-
+
+
+OUTER HARNESS EXAMPLES:
+	⁃	Archon
+	⁃	Gastown
+	⁃	Ralph loop
+
+https://openai.com/index/open-source-codex-orchestration-symphony
+
+https://martinfowler.com/articles/harness-engineering.html
+
+https://github.com/openai/symphony
+
+https://openai.com/index/harness-engineering
+
+Agent swarms?? 
+
+https://youtu.be/c5DdXzqaeVU?si=djiNR-RbuMyX2Pv9
+
+
+
+    ∙•⚔︎⚬◦∙⚚∙◦⚬⚔︎•∙Țħê Føüņđãťĩøņ∙•⚔︎⚬◦∙⚚∙◦⚬⚔︎•∙
+https://youtu.be/sTh6d8WFEUc?si=rPb5R0eUury18IRe
+
+
+These all in the last 24hrs! 
+Massive signal:
+
+	⁃	The boring tools
+https://youtu.be/FDkvRl1RlT0?si=2Xd451gbb8ZAmUAN
+
+	⁃	Open AI Symphony
+https://youtu.be/M_AmPWmkpwA?si=P7YfjRHhfMYqsNuW
+
+https://youtu.be/5p6h23Md4Zw?si=IlnD4SYvAfeZ1tKr
+
+Making OpenClaw my life Infrastructure. Radek Sienkiewicz.
+https://youtu.be/sJ2jc7leKBk?si=e1PXdEuTITWNjwkx
+
+	⁃	Local AI
+https://youtu.be/iUSdS-6uwr4?si=kbW47iNCKfRAisQd
+
+	⁃	AI overview/Codex breakdown 
+https://youtu.be/FU2iB-UfPPA?si=wEE-Qa2-BIpFrQEK
+
+
+Creator of Pi
+https://youtu.be/sqtX2OmgOF0?si=jDN4a7B0vfQh_1tT
+
+Pi coding agent setup after 2 months
+https://youtu.be/DWWrLlM3gwQ?si=Opb4qjP1ZfNdArlT
+
+
+
+#Indie_Dev_Dan 
+https://youtu.be/EnXKysJNz_8?si=odpewYyZ0Nh22byN
+
+
+Notes/questions:
+	⁃	Reasoning graphs?
+
+
+
+Hermes
+
+This youtuber has been an openclaw fanatic since the beginning and he teased this video today about Hermes be better. We have so much great context here. 
+https://youtu.be/Bg-IPiql7x8?si=sugrCe-5BcSeP3ka
+
+Hermes Agent w/ChatGPT 5.5
+https://youtu.be/B2wHaRDf3Qo?si=lSQuvbUr0s-BhDXw
+
+Fix your skills..? K.. Well SHIT!! Why not..!? 
+https://youtu.be/SpFgS7WlCJc?si=jr4kirJMVxKmZmFZ
+
+How to master Hermes (it now has swarms!)
+https://youtu.be/EmF06O4vOWI?si=hw3Zh8WraTacbGld
+
+
+Building multi-agent systems 
+
+Mastra
+https://www.youtube.com/live/FNb2fL9WhQg?si=-pQ-2BDaRYvDATkA
+
+https://youtu.be/zMefb2AwfmM?si=tkQnyOa_tCWSBdal
+
+https://youtu.be/uK-YMHi1Vc8?si=liD_HgnMn0746xVB
+
+https://youtu.be/2czYyrTzILg?si=O_H2EZYsDyX4xs_o
+
+https://youtu.be/pN-LfxNFiTc?si=Z-sZuPNcOpatARn9
+
+https://youtu.be/mCO-D3pkviM?si=knQ69z7tu0f9ujcz
+
+https://youtu.be/phdAgGhHdYw?si=t3Q5Pin6T3BZgfRm
+
+https://youtu.be/BaXTos7B1vY?si=ReLnDikyGjzFgXyo
+
+https://youtu.be/nWzXyjXCoCE?si=5-ljOl-mvMi68OJm
+
+https://youtu.be/sxX8BMscce0?si=DSuvfyfXB-df70jY
+
+Hermes trading agent
+
+https://youtu.be/CXMalvS5CG8?si=v9uSwxzFnTgsn3Sj
+
+https://youtu.be/cEo95olh2j4?si=xwsXupTr82qrEd8C
+
+
+
+AI Memory
+https://youtu.be/W2HVdB4Jbjs?si=_eD3_FOHBEyJGUM7
+
+
+AI Expert!
+https://youtu.be/MRM7oA3JsFs?si=ru9gnxZdQKtDHqQQ
+
+Codex full 2 1/2 hour session 
+https://youtu.be/KXIdYEdOPys?si=N9vfVIykKYHlP3DV
+
+Google Cloud 1-hour course
+Part 1
+https://youtu.be/rHtRWyxVQps?si=AQS8vecC4k50xRSk
+Part 2
+https://youtu.be/pEAZ5iyKgWE?si=2SxKz2UdpMJOCAyM
+
+How to build a I trading firm
+https://youtu.be/T6jdfZ317Vw?si=_j1Mv6RL2CpctZ3o
+
+Agentic AI 2-hour course
+https://youtu.be/EsTrWCV0Ph4?si=gntrQb5JCxu7iK4y
+
+
+
+MASTRA - This might be the answer.. 😏💭✔︎
+
+Obsevational memory
+https://youtu.be/cIV1FA858oI?si=Ap0iXnFzLySXY4nC
+https://youtu.be/Gkhq397E_lw?si=RdizMcwegprvhOJZ
+
+Measuring agents with evals, datasets, and experiments.
+https://youtu.be/Vla5LfmOOrM?si=b9AjmoLEagyzwmse
+https://youtu.be/R6pjAdGhxhQ?si=fqZn2rYOtBuZg6fS
+
+Cognee
+https://youtu.be/E8-is7OH3UI?si=VaM17ocH-B9_9LOI
+
+Mastra Remote Sandboxes
+https://youtu.be/Ix2X-sjVXjw?si=wsgdTulHDZPBv4Df
+
+From Zero to Deep Research Agent in 20 minutes. Mastra Real World Multi-Agent Systems.
+https://youtu.be/b2svH-lVjx4?si=NWkAc8uSdHtZn0tF
+
+How MASTRA uses observational memory to build coding agents.
+https://youtu.be/VWsJjyk1lBM?si=V90o-HGgiXPpSmKV
+
+Mastra on multi-agent collaboration & ChatGPT 5.5
+https://www.youtube.com/live/ASACRSA2Qt0?si=bUdS4eH9kbYP54-h
+
+4 layers of AI memory
+https://youtu.be/18iIHQtIPmc?si=22jdsN5cgs29zuPF
+
+
+Agentic pipeline - policy and governance at the forefront. 
+(this is interesting)
+
+https://youtu.be/xfwmzYOod3k?si=yTgK7F7d5BMSx_Sz
+
+https://youtu.be/1w-lmoYmPAI?si=FrvLcK804j8J9wqZ
+
+https://youtu.be/BQDwFTy_QOg?si=nawLi7mRvvKeOZSG
+
+https://youtu.be/X2SVUeQwdI8?si=yrdTC-COwqdTvU9M
+
+https://youtu.be/lHZomSUi7gU?si=j3jpzuuiYNc7FijP
+
+https://youtu.be/mREHBZQbhBo?si=wbpNo41USJUrB3F-
+
+https://youtu.be/iFLaeWXRSlY?si=_4tVcUKHRXd1qLvl
+
+https://youtu.be/9YYUzA5ZnDo?si=dp3ErEERQ5u6jefn
+
+
+
+
+Really great senior engineer who makes videos that genuinely help with stuff like this. — (Mansel Sheffel)
+https://youtu.be/G4_wSuJZtyI?si=e6XgbQ1TFDdXRToz
+
+https://youtu.be/THkJ2fSvwaI?si=IRp8kbuqgTtPMHBY
+
+https://youtu.be/1kwbo2qlMrw?si=MCVaw4vB7KfWkV7y
+
+https://youtu.be/dITtLiC9FzM?si=ufHa_aQbER10yFm4
+
+https://youtu.be/-GV1MRNB4hQ?si=E-c9W_KfYWfJH4kk
+
+https://youtu.be/JdqJ2ekWt8M?si=BvwP6kamocMe1-tm
+
+
+
+
+Codex
+
+Full codex course
+https://youtu.be/MhHEGMFCEB0?si=6jS_FZ4uExyP8Nan
+
+This guy has 836 subscribers. Let's take him seriously.
+Especially because the video has gotten a whole 129 views in 16 hours. This should teach us everything. Let's go! Also, his name is Hal Shin. So he's the robot from that one movie, plus a human shin. Knowledge.. 👊 
+https://youtu.be/5x3_U7b4eKU?si=2Gwp5LlsIL0f17oQ
+
+30min full course
+https://youtu.be/DLSK4wLK544?si=RMH98YFXi9hgpgJl
+
+Another 30min full course
+https://youtu.be/474wZZHoWN4?si=QSisM_yZXnLJY-Lq
+
+/Goal
+https://youtu.be/p88mkfPkOZc?si=KIHfedsbD-0NxTLe
+
+129 views  Apr 29, 2026
+  #OpenAI #Symphony #Codex
+OpenAI Symphony article:
+ https://openai.com/index/open-source-...
+Symphony GitHub repo:
+ https://github.com/openai/symphony
+Hermes also shipped a synphony type design!
+https://youtu.be/a6haI8sTyK8?si=o5ajm8yd0QNyq1Gb
+VIWO GitHub repo:
+ https://github.com/OverseedAI/viwo
+
+OpenAI just released Symphony, a new multi-agent orchestration spec for managing autonomous coding agents through an issue tracker like Linear.
+
+Instead of manually juggling multiple Codex or Claude Code-style agent sessions, Symphony lets you assign agents to tickets, have them work in isolated workspaces, loop until completion, and open pull requests automatically.
+
+In this video, I walk through what Symphony is, how the reference implementation works, how to set it up with Linear and GitHub, and why I think this points toward the future of AI software development workflows.
+
+But there’s also a bigger question: if AI can now generate code and open PRs at scale, is code generation still the bottleneck?
+
+I argue that the real bottleneck is shifting toward requirements and review. More AI-generated pull requests do not automatically mean more valuable software shipped. If teams cannot write better specs, validate changes, and review PRs effectively, they may just end up with more noise, more bugs, and more tech debt.
+
+Topics covered:
+	•	What OpenAI Symphony is
+	•	How multi-agent coding workflows work
+	•	Linear ticket-based agent orchestration
+	•	Codex agents opening pull requests automatically
+	•	How Symphony compares to manually running agent harnesses
+	•	Why code generation may no longer be the main bottleneck
+	•	Why AI code review and better specifications matter next
+
+If you’re experimenting with AI coding agents, Codex, Claude Code, Linear, GitHub automation, or multi-agent development workflows, this is a glimpse at where software engineering might be heading next.
+
+What do you think the real bottleneck is now: code generation, requirements, review, or something else?
+
+https://youtu.be/MhHEGMFCEB0?si=o9KRsf_U2iQhyyoe
+
+Alex Finn saysss — and I (paraphrase) quote directly: 
+BEST SHIT IF MY .IFE EVERRRR1!!!1.. Or something similar.. Let's learn., 😌🙏💭◦∙❉✦✧✦❉○・📈•👊🫂🫂🫶🏃‍♂️‍➡️🏃‍♂️‍➡️✔︎✔︎💦💦💭💦⏳.. 👀👀 yup.. Idk 🤷‍♂️ freaky mf.. 
+https://youtu.be/iz3_xhi6iQE?si=P4rWkXb9pw64Y6SN
+
+Riley brown says it much simpler - I quo(paraphrase)te:
+CODEX IS JESUS IF HE HAD TIIIITSSS!!.. Well said Mr. B
+Let's learn about Jesus's tits in code form, yeah? 
+https://youtu.be/474wZZHoWN4?si=BKXf4tpbqyAxtWhq
+
+This ones a sleeper.. Maybe.. Hopefully.. 🤷‍♂️🤷‍♂️
+https://youtu.be/SNAlFLV9MBE?si=MYic5UYSx-_e149y
+
+
+
+Context
+
+https://youtu.be/rU6IYiQ1SdQ?si=SBIOkNKv4zFE5dzo
+
+
+
+
+Trading tool - great but the best opportunity might just be the thing he mentions at the end of the video about the code base structure or something like that being the real opportunity. I forget exactly what he says. 
+https://youtu.be/9FoEsXNGLwI?si=rnCNjzf97ga56img
+
+https://arxiv.org/abs/2412.20138
+
+https://github.com/TauricResearch/TradingAgents
+
+
+
+
+https://www.semrush.com/partner/incomestreamsurfersone_4478771/?irclickid=VRL2Wtw4fxycUNOSt2UaZUgiUkuypcUBL0UOxw0&utm_source=affiliate&utm_Medium=impact&utm_campaign=4478771&utm_terms=&utm_content=&irgwc=1&afsrc=1&utm_medium=impact&utm_term=&ir_partnerid=4478771&ir_adid=995972&ir_campaignid=13053
+
+
+
+https://youtu.be/luBkbzjo-TA?si=0iOMfpxP3q0kYqIr
+
+
+Make billions (some money) w/AI!
+Well we’ll see about that Mr and also Mrs AI $ 🖨️’rs
+https://youtu.be/C0ZKtSx8gyA?si=CcgasTh-bb1YqsNY
+https://youtu.be/K8Ros5RhJW4?si=DgdQxwkOMOUMLnx2
+This guy gave AI 10k to trade! Unquestionably smart!😃👍
+https://youtu.be/eu8UJtuIi-E?si=845ZYH_LeBC1jddH
+
+
+
+
+symphony-of-the-scribe-bc9da74b15f1/overview
+
+[REDACTED-LINEAR-API-KEY — rotate this key; it was present in the uploaded corpus]
+
+
+FULL COURSE
+https://youtu.be/14RP8liACqo?si=U5U1PtPJdVIZbLZl
+
+Agent OS
+https://youtu.be/w0S-khYCaB4?si=MUapSz_3Bg6BXqMW
+
+
+
+
+
+ossium.live
+
+https://youtu.be/14RP8liACqo?si=n2b30ZzbWUbeTbDr
+
+https://youtu.be/ow1we5PzK-o?si=3yEWOPeAHEdAZSfw
+
+https://youtu.be/G47mnkGkYwQ?si=PtD7qpe-Zop8Z8c4
+
+https://youtu.be/mDja5eP-Mwk?si=TIKKVQNwT6_Dht2d
+
+https://youtu.be/j7d5rs0iMlE?si=ZcYPbkhEwZLtEUDu
+
+https://www.notion.so/share/554adf4473ce815db314000306edc1ce/359adf4473ce8188971400a937d46792
+
+https://youtu.be/mDja5eP-Mwk?si=LcqS-JCKMCGx2yaB
+
+https://youtu.be/0TPq43Wpbz0?si=MVX8-Ucujh7hjqHX
+
+https://youtu.be/0TPq43Wpbz0?si=quHyb0TStu_DR6tT
+
+https://chatgpt.com/share/69fd58ce-3530-832f-8f7e-ad789c64109a
+
+https://youtu.be/G47mnkGkYwQ?si=UnZmKJC2fDxW5i0L
+
+https://youtu.be/G47mnkGkYwQ?si=UnZmKJC2fDxW5i0L
+
+https://openclawxonline.fun/
+
+https://youtu.be/kwRTUw8pb2c?si=DjVukD3H4tmQEdL7
+
+https://youtu.be/ynJyIKwjonM?si=L4fzMjB2U19iDcdi
+
+https://youtu.be/vvSQSMGatZw?si=vglRTnViXsND0kY_
+
+https://youtu.be/G47mnkGkYwQ?si=vGh_v9DYZH_us1-z
+
+
+——
+
+This guy is the REAL DEAL. Take particular note if these next 4 (maybe even go check him out)
+https://youtu.be/dITtLiC9FzM?si=kIT26idjU4ErJDl7
+
+https://youtu.be/JdqJ2ekWt8M?si=jsbQsoI8Y95Mr8wn
+
+https://youtu.be/G4_wSuJZtyI?si=hXbwpXsYTbmxnEZy
+
+https://youtu.be/sTh6d8WFEUc?si=UubW25sf28qY5tb0
+
+——
+
+This one is huge - NateBJones
+https://youtu.be/647pSnX5H_Y?si=VGA5Z23AcxtkIzNF
+
+
+——
+
+https://youtu.be/qkc1j3_k8gs?si=Qa5hH3X7_aWUnVmr
+
+——
+
+3 1/2 hour course on real engineering with AI
+https://youtu.be/14RP8liACqo?si=-DJUzurF5KR8zIqm
+
+——
+
+This guy is THE GOAT.. check him out beyond just this video
+https://youtu.be/EnXKysJNz_8?si=PkbIeL6xUkRrOHyw
+
+https://youtu.be/gb5TlGw6Uks?si=6kPMSCvN5q6d-bbz
+
+
+https://youtu.be/EpJ0CjTJSag?si=cdRGise7ho158egj
+
+https://youtu.be/ow1we5PzK-o?si=X9m_Yd9dkelTm63f
+
+https://youtu.be/RvkbPPZbPgc?si=1rQY_-9M_sZLHBL7
+
+https://youtu.be/YTVSwOY19Qs?si=NPHQWKRf1Fec9kJf
+
+https://youtu.be/ohKt066uFhg?si=AaJLjfJM7gLSoFF5
+
+https://youtu.be/ohKt066uFhg?si=bat_gduHbarvEk_5
+
+https://youtu.be/ON5LIT0M4do?si=nvuYqHwdCYy_uYGt
+
+https://youtu.be/DCZZ3AJKzuc?si=JIMR7TtcmQ0AQ65g
+
+https://youtu.be/P_RI1kCkRbo?si=ftOwP0VfFa_E4yZR
+
+https://youtu.be/A48uhxfxbsM?si=pFNHYANZpda5oRbs
+
+https://youtu.be/-aM2EDTiaMs?si=5iamahVSqOKpHHjn
+
+https://youtu.be/Wmp2Tku2PrI?si=ttGSuGS3zE2lR3D1
+
+https://youtu.be/o-zkvb0iFDQ?si=J8UGRSnINL_hRk9K
+
+SUPABASE VID
+https://youtu.be/GmAQKINjv1E?si=3zm-oxx3VzxybqtB
+
+COMPLEX APPLICATIONS 
+https://youtu.be/ZdheJTfLu-s?si=aD9wQqeX45oZ4YXm
+
+Guide, don't control (love it just by the title! lol)
+https://youtu.be/juoNbJiZUi0?si=kxjD6MeVX-3kElXf
+
+Working with AI, not just using it. 
+https://youtu.be/BEKc4P87XKo?si=5WooLoLvb-lIAY1d
+
+Skills at scale (full workshop)
+https://youtu.be/pFsfax19yOM?si=mSbyfMZxncmYs5V-
+
+Hierarchical memory 
+https://youtu.be/esY99nYXxR4?si=w_qDrxo-QvN8OUh1
+
+Just clone the repo
+https://youtu.be/Wmp2Tku2PrI?si=e68kZ-5eJUvd1Iym
+
+Context is the new code
+https://youtu.be/bSG9wUYaHWU?si=fJ86tAtlmUkciQhm
+
+
+・・・HERMES AGENT SECTION・・・
+
+OH MY GOD THIS ONE IS HUGE!
+(Hermes agent computer use)
+https://youtu.be/h_w0QraVu4k?si=tdUBgVaD9kZE_CyZ
+
+Hermes agentic os! 😳
+https://youtu.be/dLk2Imx-0uk?si=Q9LVR_uZE1RezadW
+
+Use Hermes agent better than 99% of people
+https://youtu.be/NvakBZyc1Sg?si=0pUMz52l9nDedW1M
+
+/Goal use inside Hermes
+https://youtu.be/t7rI2IBOvqI?si=C3-yfoWtBVe71T43
+
+Hermes + Aion UI + Obsidian + omi
+https://www.youtube.com/live/vpKRslS6LXc?si=KvWz8y6JKkzULRGc
+
+
+
+This ones massive 5 hour course on all things Hermes & openclaw AI agents and their ins and outs. So important and interesting.. 
+
+
+
+
+
+
+
+
+
+THIS IS PAI BY DANIEL M. ! He's one of my main inspirations for everything im doing!.. Cool ☺️👇
+
+ developer spent 22,000 hours building a Personal AI Operating System on top of Claude Code
+
+now anyone with a terminal can install it for FREE
+
+it knows your goals, remembers every decision you've made, and prepares your morning briefing while you sleep
+
+[ the numbers are insane ]:
+
+- hours of dev work in it: 22,000
+- sessions logged: 6,000
+- time saved per day: 2-3 hours
+- GitHub stars: 12,100
+- skills built in: 45
+- workflows wired up: 171
+- safety hooks: 37
+- cost to install: $0
+
+[ the science is wild too ]:
+
+no embeddings, no vector databases, no AI magic you can't read
+
+every memory, decision, and context lives in plain markdown files
+you read it with cat, search it with ripgrep, version it with git
+
+4 memory types compound over time:
+
+- work memory (active projects, open decisions)
+- knowledge memory (domain expertise, research)
+- people memory (contacts, companies, relationships)
+- learning memory (patterns, mistakes, what works for YOU)
+
+every complex task routes through a 7-step cycle:
+
+OBSERVE → THINK → PLAN → BUILD → EXECUTE → VERIFY → LEARN
+
+privacy is enforced by CODE, not prompts
+
+a hook called ContainmentGuard physically blocks sensitive data from being written outside designated zones
+
+[ the grift opportunity is even wilder ]:
+
+freelancers are already charging $500-2,000 per personal AI setup for executives, founders, and busy operators
+
+one person + one weekend = a consulting business that didn't exist 6 months ago
+
+every AI productivity app you're paying $30/month for is replaceable by 4 hours of setup work and this one repo
+
+REPO: github.com/danielmiessler…
+
+100% OPEN SOURCE, FREE
+
+
+
+
+(900
+
+https://youtu.be/1GX18UGoJRw?si=JiRPAisEpnhbKD87
+
+https://youtu.be/pkOFvIoBLk4?si=MWeSrbSEhNVfW2I0
+
+https://youtu.be/Q-MJC3xuLyI?si=eV5BuvgY3AAnhtaZ
+
+*
+
+https://youtu.be/2hwS_r-ZAN0?si=UXIjQqVpj-DyG-bW
+
+https://youtu.be/WDx-sWsFB2w?si=-94IQdzovUmfb0hK
+
+
+
+Dark factory’s: The real endgame 🧊
+https://youtu.be/am_oeAoUhew?si=BDGIEaZ2_o6HJPhn
+
+https://youtu.be/am_oeAoUhew?si=BDGIEaZ2_o6HJPhn
+
+https://youtu.be/6woc6ii-zoE?si=9rjDqfMW8Qkm05ez
+
+https://www.youtube.com/live/0PgB3EQ74OM?si=L7h07Zt0dIiB_xB1
+
+https://www.youtube.com/live/Xg0tNz9pICI?si=65hwSzL3dZKlV4jR
+
+https://youtu.be/jIzrqGU3rRA?si=SZNhErmku_SnKO8r
+
+
+
+https://youtu.be/1GX18UGoJRw?si=JiRPAisEpnhbKD87
+
+https://youtu.be/pkOFvIoBLk4?si=MWeSrbSEhNVfW2I0
+
+https://youtu.be/Q-MJC3xuLyI?si=eV5BuvgY3AAnhtaZ
+
+
+
+
+
+
+
+
+
+https://youtu.be/HfEu7XPUnAU
+
+https://youtu.be/mqnWsUggIk8
+
+https://twin.so/?via=worldofai
+
+
+
+
+
+Monitor perpetual DEX competitors and crypto trendsSent Perpetual DEX & Crypto Market Digest for February 4, 2026. Key findings: NovaDEX announced $12M Series A led by Polychain Capital; HyperTrade launched v2.5 with cross-margin support increasing TVL by 18% to $1.2B; LightSwap integrated Arbitrum Orbit for lower fees. Overall DeFi TVL rose 5.3% week-over-week amid bullish BTC sentiment. Email delivered with 8 sourced links covering all competitor updates and market movements.Tby Twin154 runs·61 clones
+
+
+
+Audit smart contracts for security vulnerabilitiesSecurity audit of DexProtocol v4-core completed. Found 2 critical and 1 medium severity issues:
+
+**Critical-1:** Hook callback in `PoolManager.sol` allows reentrancy during `afterSwap` — a malicious hook can re-enter the pool mid-state update, draining up to 3.2% of pool reserves per transaction. **Critical-2:** Dynamic fee hooks can manipulate return values trusted by the pool, enabling sandwich-style fee extraction of ~$12K per block on high-volume pools. **Medium-1:** `beforeAddLiquidity` callback ordering allows state reads before validation, leaking pending position data to adversarial hooks. No exploitable oracle manipulation vectors were found in flash loan paths.Tby Twin5 runs·16 clones
+
+
+
+
+Research AI news and generate daily social contentResearched the latest AI developments for Monday, March 10, 2026, focusing on the $500B enterprise AI infrastructure buildout and implications for SaaS valuations. Generated three content pieces:
+
+1. X post for @signalbrief: Thread on how AI agents are replacing mid-market SaaS — 'The $500B question isn't who builds AI, it's whose revenue it eats first.'
+2. LinkedIn post for The Signal Brief: Professional analysis of Goldman Sachs' revised AI capex forecasts and what it means for software investors.
+3. X post for @cryptoalpha: Crypto × AI crossover on decentralized compute networks benefiting from the enterprise AI wave.
+
+All content emailed with branded mint green graphics and optimal posting times (8:30 AM CT for X, 9:15 AM CT for LinkedIn).Tby Twin1 runs·3 clones
+
+Monitor Twitter accounts and get email alertsMonitored Twitter account @CryptoAlphaLabs and detected 3 new tweets since last check. New tweets include: (1) 'Exciting airdrop announcement for $NOVA holders...' posted Jan 30, 2026 with 342 likes, (2) 'New partnership with DeFi protocol MetaVault...' posted Jan 30, 2026 with 187 likes, (3) 'Weekly market analysis thread 🧵...' posted Jan 29, 2026 with 521 likes. Email notification sent to the configured address with full tweet content, timestamps, and direct links.Tby Twin362 runs·50 clones
+
+
+
+Generate ad creatives for your digital productsGenerated a complete Meta ad creative package for the "Focus Flow" productivity course targeting remote professionals aged 25-40. Selected the "Mini-Documentary" archetype with a Curiosity Hook opener. Produced 3 headlines (best: "I Tried This Focus Hack for 30 Days"), 3 descriptions, and full primary text. Created 2 scroll-stopping ad images featuring bold typography over lifestyle photography using the Vibe to Vector methodology. Also generated a 45-second UGC script using the Triple Hook Playbook framework with emotional and mechanism hooks woven into the narrative.Tby Twin143 runs·115 clones
+
+
+Research profitable tech dropshipping niches and reportSuccessfully completed deep research on tech/gadget dropshipping niches for 2026. The report identifies 4 key pillars: AI-powered gadgets (35-55% margins), biometric wearables (40-60% margins), smart home accessories (30-50% margins), and urban mobility tech (25-45% margins). 12 specific winning products were identified, including an AI noise-cancelling sleep device ($18 cost / $49.99 retail) and a smart posture corrector ($12 cost / $39.99 retail). Reliable suppliers from CJ Dropshipping and top-rated AliExpress vendors were listed with shipping times. Competition analysis shows biometric wearables as the lowest-competition high-margin entry point. The full actionable report was emailed to the designated recipient.Tby Twin21 runs·40 clones
+
+
+
+Build brand guidelines and marketing SOP documentSuccessfully created the comprehensive "TerraVolt Marketing Agency — Guidelines, Principles & SOP" Google Doc. The document covers brand foundation (33 years of experience, color palette #0066CC and #003366), creative principles aligned with top-tier agency standards, production SOPs for flyer and social media content, and campaign brief templates. Additionally, generated 2 photorealistic flyer concepts for the renewable energy campaign with direct download URLs.Tby Twin11 runs·33 clones
+
+
+
+Analyze competitor apps and find market gapsCompleted competitive analysis of 7 exam prep apps across 4 target states. Found that StudyBuddy Pro has 2,847 reviews averaging 3.2 stars with top complaints about outdated question banks (mentioned in 34% of 1-star reviews) and no offline mode. QuizMaster charges $14.99/mo but lacks state-specific content for Florida and Texas. Identified 3 key differentiation opportunities: adaptive learning for state-specific regulations, affordable annual pricing under $40, and offline study mode. Report delivered to Google Docs with pricing comparison table, sentiment breakdown, and feature gap matrix.Tby Twin1 runs·9 clones
+
+
+
+Monitor X for trending news and viral postsX/Twitter Trending News Summary - January 30, 2026
+
+**Politics:** Senate passes new infrastructure bill with bipartisan support — 45K retweets, 120K likes. Major discussion around implications for state funding.
+
+**Technology:** OpenMind AI announces breakthrough in reasoning models — 38K retweets, 95K likes. Tech influencers debating implications for developer tooling.
+
+**Crypto & Memecoins:** $PAWS token surges 400% after viral thread by @CryptoMaxwell reaches 62K engagements. Multiple whale wallets spotted accumulating.
+
+**Viral Moments:** Comedy clip of a dog interrupting a live news broadcast hits 2.1M views in 6 hours with 180K likes.
+
+**Business:** GlobalTech Corp CEO resignation sparks 28K-engagement thread debating corporate governance. Stock dropped 8% in after-hours trading.
+
+Total tweets analyzed: 2,347 | High-engagement posts surfaced: 42 | Categories covered: 8Tby Twin108 runs·11 clones
+
+
+Research trending TikTok and Reels ad campaignsGenerated a comprehensive trend report covering TikTok and Instagram Reels marketing for the current month. Identified 4 trending TikTok campaigns including the 'Fashion Tier List' challenge by StyleVault (12M views) and the 'Thermostat Game' by FreshHome (8.5M views). Found 3 hot Instagram Reels trends including 'Soul Mates' transitions and 'Telling vs. Being' side-eye memes. Highlighted popular editing styles (stop-motion blink cuts, slow-mo dramatic reveals, bold text overlays) and effective hooks like 'Why everyone is obsessed with [X]...' and POV crowd psychology angles. Provided 3 actionable ideas for freelance video creators to apply these trends to client work.Tby Twin0 runs·3 clones
+
+
+
+Analyze crypto markets and email daily insightsDaily Crypto Market Analysis — February 6, 2026: Bitcoin is trading at $97,450 (+2.3% in 24h), Ethereum at $3,120 (+1.8%), and Solana at $148 (+4.1%). Market sentiment is cautiously bullish following the Fed's decision to hold interest rates steady and positive momentum from the proposed CLARITY Act advancing in committee. Whale wallets accumulated ~12,000 BTC over the past 48 hours. Today's outlook: expect moderate upside with resistance at $98,500 for BTC; watch for CPI data release at 8:30 AM EST which could drive volatility.Tby Twin3 runs·28 clones
+
+
+
+Research profitable AI businesses and email insightsResearch report successfully sent to the specified email address. The report identified 12 emerging AI companies across real estate and hospitality sectors, including PropVision AI (automated property valuation, $4.2M seed round), StaySync (AI-powered hotel revenue management, 340% YoY growth), and RentFlow (tenant screening SaaS, serving 8,000+ landlords). Key trends highlighted include AI-driven dynamic pricing tools, virtual staging platforms, and predictive maintenance solutions for hotel chains.Tby Twin9 runs·15 clones
+
+Research profitable AI business opportunities weeklyResearch complete: identified 12 promising AI business opportunities.
+
+Top findings include: (1) NovaMind AI — a startup offering AI-powered contract review for SMBs, generating $2.4M ARR in 8 months with 85% margins; (2) AI-driven product photography SaaS — an underexploited niche with only 3 competitors and growing demand from e-commerce sellers, estimated $500K/year potential; (3) Custom AI chatbot reselling for local businesses — a proven model with agencies reporting $8K-$15K/month recurring revenue. Full report with 12 opportunities, profitability scores, and market analysis sent to the designated email address.Tby Twin0 runs·2 clones
+
+
+Build a personal assistant bot on TelegramReceived a message from Sarah asking to research the best Mediterranean restaurants in Brooklyn for a dinner party. Sent an immediate acknowledgment via Telegram: "Got it, looking into that now!" Conducted deep research and compiled a list of 5 top-rated restaurants with ratings, price ranges, and reservation links. Sent the full summary back to Sarah within 3 minutes. Updated conversation history with her dining preferences for future reference.Tby Twin0 runs·2 clones
+
+
+
+Research trends and build a creator content strategyComprehensive content strategy report completed for a new creator targeting Western markets.
+
+Top 5 validated niches identified: AI Tools Tutorials (demand 9.5/10, low competition), Faceless Scary Stories (demand 9/10, RPM $7.20), Personal Finance Education (demand 9.5/10, CPM $13-22), Motivational Self-Improvement with cinematic visuals (demand 8.5/10), and Sustainable Living Tips (demand 8/10). For each niche, 5 viral video ideas were generated with 3-second hooks, clear concepts, and platform-specific durations. Platform optimization included YouTube SEO titles and video structure templates, TikTok hashtag strategies with punchy hooks, Instagram Reels visual-first storytelling formats, and Facebook Videos engagement tactics. A 30-day publishing calendar was also provided with recommended posting frequency per platform.Tby Twin0 runs·1 clones
+
+
+
+
+
+https://youtu.be/S_oN3vlzpMw?si=2JONaZe1Sj0ScMHf
+
+
+https://youtu.be/hV5_XSEBZNg?si=H_F_lXl3FVXvQLLf
+
+
+https://github.com/vvolen/foundation-layer
+
+https://github.com/vvolen/versailles
+
+https://github.com/vvolen/munch-context-protocol-mcp-
+
+
+
+
+
+https://youtu.be/vnocKrxasg4?si=pmKXADxVMuIt7z2R
+
+https://youtu.be/5ztI_dbj6ek?si=BX-Rhi-vZLjUZ4Yz
+
+https://youtu.be/49V-5Ock8LU?si=ODF0DFdioLNZew-z
+
+
+
+
+https://youtu.be/OM06kpqZVcA?si=8Z7sX7dE6UxFIwcD
+
+https://youtu.be/e4Dt1BuRDRQ?si=4V8a_V2x6jyh-sW8
+
+
+
+
+
+
+
+
+
+Stop using Claude Code in terminal. It's holding you back. By Simon Scrapes
+ https://youtu.be/uhMCy25NBfw?si=52xcYUQODkS9fsSJ
+
+Self-Improving Agents
+https://youtu.be/RoaPvj9Ovug?si=mZd7iIZnrrmah8Zh
+
+
+
+
+
+https://github.com/affaan-m/everything-claude-code
+
+https://t.co/WXNJydKcE6
+
+https://www.chainraven.com/
+
+
+
+
+If you want more practical AI gems and use cases, join our free newsletter with daily tutorials and latest news in AI: simplifyingai.co
+
+
+https://github.com/Panniantong/Agent-Reach
+
+https://github.com/Astrosp/Awesome-OSINT-For-Everything/
+
+https://github.com/averygan/reclip
+
+https://github.com/luongnv89/claude-howto
+
+https://github.com/FujiwaraChoki/MoneyPrinterV2
+
+https://github.com/mindsdb/anton
+
+https://github.com/langgenius/dify
+
+http://polyranger.com
+
+https://youtu.be/Ep5_FmzC8Uc?si=H5Ky8hMkxgdpE1N7
+
+https://youtu.be/4RHgCJVcdQM?si=Rti3CVNSyzVcTh4f
+
+https://youtu.be/7huCP6RkcY4?si=VnWo2giOxwuXV88y
+
+https://youtu.be/o-C4CLSthDo?si=33PsGDbEmkBMvVFl
+
+
+
+
+
+https://github.com/microsoft/BitNet
+
+https://github.com/NousResearch/hermes-agent/pull/5100
+
+
+
+
+
+
+https://youtu.be/BiqG3it0gY0?si=91Sst_arE31C0I72
+
+https://youtu.be/ro5jpbi5uYc?si=ZV5ovj9U-G6lA8gP
+
+https://youtu.be/RairMJflUSA?si=PTh1GWZ7WgCRUX8c
+
+https://youtu.be/38t5UBCa4OI?si=kjZhbTvKmZ6eFPbr
+
+https://youtu.be/3hioz8dlTFs?si=mtGNxiw5Z0CiQt5G
+
+
+
+
+
+https://youtu.be/tP6yf22OJdI?si=mcVvPSgwp98HaaIt
+
+https://www.youtube.com/watch?v=fR4mhYLSQEs
+https://www.youtube.com/watch?v=EHlqRx0r4BI
+https://www.youtube.com/watch?v=NcA8Mn1bC44
+https://www.youtube.com/watch?v=12Cffcjha-w
+https://www.youtube.com/watch?v=d858cEyLVOk
+https://www.youtube.com/watch?v=qjur8ovL30Y
+https://www.youtube.com/watch?v=3Pr9BPjxICE
+
+
+
+https://youtu.be/M30gp1315Y4?si=3ZE497tQq4BqeZiC
+
+https://agenticengineer.com/tactical-agentic-coding?y=M30gp1315Y4
+
+https://youtu.be/SjqfDcGZOHg
+
+https://youtu.be/2W5Lew3B1a8
+
+https://m.youtube.com/watch?v=elwqbvj8NEA
+
+https://m.youtube.com/watch?v=M30gp1315Y4&pp=0gcJCdkKAYcqIYzv
+
+https://m.youtube.com/watch?v=IA02YB8mInM&pp=ugUEEgJlbg%3D%3D
+
+https://youtu.be/tP6yf22OJdI?si=mcVvPSgwp98HaaIt
+
+https://www.youtube.com/watch?v=fR4mhYLSQEs
+https://www.youtube.com/watch?v=EHlqRx0r4BI
+https://www.youtube.com/watch?v=NcA8Mn1bC44
+https://www.youtube.com/watch?v=12Cffcjha-w
+https://www.youtube.com/watch?v=d858cEyLVOk
+https://www.youtube.com/watch?v=qjur8ovL30Y
+https://www.youtube.com/watch?v=3Pr9BPjxICE
+
+
+
+https://youtu.be/M30gp1315Y4?si=3ZE497tQq4BqeZiC
+
+https://agenticengineer.com/tactical-agentic-coding?y=M30gp1315Y4
+
+https://youtu.be/SjqfDcGZOHg
+
+https://youtu.be/2W5Lew3B1a8
+
+https://m.youtube.com/watch?v=elwqbvj8NEA
+
+https://m.youtube.com/watch?v=M30gp1315Y4&pp=0gcJCdkKAYcqIYzv
+
+https://m.youtube.com/watch?v=IA02YB8mInM&pp=ugUEEgJlbg%3D%3D
+
+https://youtu.be/M30gp1315Y4?si=3ZE497tQq4BqeZiC
+
+https://agenticengineer.com/tactical-agentic-coding?y=M30gp1315Y4
+
+https://youtu.be/SjqfDcGZOHg
+
+https://youtu.be/2W5Lew3B1a8
+
+https://m.youtube.com/watch?v=elwqbvj8NEA
+
+https://m.youtube.com/watch?v=M30gp1315Y4&pp=0gcJCdkKAYcqIYzv
+
+https://m.youtube.com/watch?v=IA02YB8mInM&pp=ugUEEgJlbg%3D%3D
+
+
+https://www.youtube.com/watch?v=RnpFhTHgcZE
+
+https://www.youtube.com/watch?v=bMFikHwg8es
+
+https://www.youtube.com/watch?v=nPysRgM2E84
+
+https://www.youtube.com/watch?v=d2QT8eTr9Q8
+
+https://www.youtube.com/watch?v=RnpFhTHgcZE
+
+https://www.youtube.com/watch?v=MfFhpV-FeX8
+
+https://www.youtube.com/watch?v=DsDsZjgCXV4&t=337s
+
+https://www.youtube.com/watch?v=fJxm-n6MMv4
+
+https://www.youtube.com/watch?v=ZSKC7XX67s0
+
+https://www.youtube.com/watch?v=NHwdm86qs8A
+
+https://www.youtube.com/watch?v=qWZ8CSSm0SA
+
+https://www.youtube.com/watch?v=CjEuLlfcnoc
+
+https://www.youtube.com/watch?v=3uyGViQr7BU
+
+https://youtu.be/EKG9kX86u0s?si=0qejUxg4Xe6KVvYg
+
+https://www.youtube.com/watch?v=Uzd2ckXnsg0&pp=ygUOQ2xhdWRlIGd3YyBjbGk%3D
+
+https://youtu.be/bWeV7xBBE0s?si=GkFoXVOjcuOFb_Wd
+
+https://youtu.be/nve6PtFJeo4?si=KOHo2Wk90R93Mxm-
+
+https://youtu.be/M5AeWsQ2v58?si=GC1UU0CRDakuR2vQ
+
+https://youtu.be/QUHrntlfPo4?si=11UwzDz5MVN51XvO
+
+https://youtu.be/F4zSxfBe5R0?si=KLBL4e2ASYa4n3iY
+
+https://youtu.be/AURa5oPVvaE?si=wIZ_bKAteGfg7pRR
+
+https://youtu.be/RL6hK-Xo7cM?si=Jd_5Odh9PFvzmHKU
+
+https://youtu.be/japT66frdhM?si=4cIYomN4IcPqTLZo
+
+https://youtu.be/xdR4XD-Q8po?si=4xdQN-_xLDL3SByb
+
+https://youtu.be/nJ-uRyqZFFg?si=mmxbtKSny-vSPBCU
+
+https://youtu.be/4Cb_l2LJAW8?si=U5NSDIICowHN1Do1
+
+https://youtu.be/f95-O8C88uw?si=AqeJGCvJ31Mu6JoT
+
+—————— already index in NBLMMLBNB
+
+https://youtu.be/Xn-gtHDsaPY?si=IC3tUX8wAbepqPjO
+
+{
+  "anthropics/skills": {
+    "stars": 50184,
+    "description": "Public repository for Agent Skills",
+    "url": "https://github.com/anthropics/skills",
+    "type": "skills",
+    "skills": [
+      {
+        "name": "algorithmic-art",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/algorithmic-art"
+      },
+      {
+        "name": "brand-guidelines",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/brand-guidelines"
+      },
+      {
+        "name": "canvas-design",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/canvas-design"
+      },
+      {
+        "name": "doc-coauthoring",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring"
+      },
+      {
+        "name": "docx",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/docx",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/docx"
+      },
+      {
+        "name": "frontend-design",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/frontend-design"
+      },
+      {
+        "name": "internal-comms",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/internal-comms"
+      },
+      {
+        "name": "mcp-builder",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/mcp-builder"
+      },
+      {
+        "name": "pdf",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/pdf"
+      },
+      {
+        "name": "pptx",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/pptx"
+      },
+      {
+        "name": "skill-creator",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/skill-creator"
+      },
+      {
+        "name": "slack-gif-creator",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator"
+      },
+      {
+        "name": "theme-factory",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/theme-factory"
+      },
+      {
+        "name": "web-artifacts-builder",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder"
+      },
+      {
+        "name": "webapp-testing",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/webapp-testing"
+      },
+      {
+        "name": "xlsx",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/xlsx"
+      }
+    ]
+  },
+  "obra/superpowers": {
+    "stars": 33858,
+    "description": "An agentic skills framework & software development methodology that works.",
+    "url": "https://github.com/obra/superpowers",
+    "type": "skills",
+    "skills": [
+      {
+        "name": "brainstorming",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/brainstorming",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/brainstorming"
+      },
+      {
+        "name": "dispatching-parallel-agents",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/dispatching-parallel-agents",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/dispatching-parallel-agents"
+      },
+      {
+        "name": "executing-plans",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/executing-plans",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/executing-plans"
+      },
+      {
+        "name": "finishing-a-development-branch",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch"
+      },
+      {
+        "name": "receiving-code-review",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/receiving-code-review",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/receiving-code-review"
+      },
+      {
+        "name": "requesting-code-review",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/requesting-code-review",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/requesting-code-review"
+      },
+      {
+        "name": "subagent-driven-development",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/subagent-driven-development",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/subagent-driven-development"
+      },
+      {
+        "name": "systematic-debugging",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/systematic-debugging",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/systematic-debugging"
+      },
+      {
+        "name": "test-driven-development",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/test-driven-development",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/test-driven-development"
+      },
+      {
+        "name": "using-git-worktrees",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/using-git-worktrees",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/using-git-worktrees"
+      },
+      {
+        "name": "using-superpowers",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/using-superpowers",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/using-superpowers"
+      },
+      {
+        "name": "verification-before-completion",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/verification-before-completion",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/verification-before-completion"
+      },
+      {
+        "name": "writing-plans",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/writing-plans",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/writing-plans"
+      },
+      {
+        "name": "writing-skills",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/writing-skills",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/writing-skills"
+      }
+    ]
+  },
+  "vercel-labs/agent-skills": {
+    "stars": 15610,
+    "description": null,
+    "url": "https://github.com/vercel-labs/agent-skills",
+    "type": "skills",
+    "skills": [
+      {
+        "name": "react-best-practices",
+        "github_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices"
+      },
+      {
+        "name": "web-design-guidelines",
+        "github_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines"
+      }
+    ]
+  },
+  "K-Dense-AI/claude-scientific-skills": {
+    "stars": 6888,
+    "description": "A set of ready to use scientific skills for Claude",
+    "url": "https://github.com/K-Dense-AI/claude-scientific-skills",
+    "type": "skills",
+    "skills": [
+      {
+        "name": "adaptyv",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/adaptyv",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/adaptyv"
+      },
+      {
+        "name": "aeon",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/aeon",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/aeon"
+      },
+      {
+        "name": "alphafold-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/alphafold-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/alphafold-database"
+      },
+      {
+        "name": "anndata",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/anndata",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/anndata"
+      },
+      {
+        "name": "arboreto",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/arboreto",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/arboreto"
+      },
+      {
+        "name": "astropy",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/astropy",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/astropy"
+      },
+      {
+        "name": "benchling-integration",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/benchling-integration",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/benchling-integration"
+      },
+      {
+        "name": "biopython",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/biopython",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/biopython"
+      },
+      {
+        "name": "biorxiv-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/biorxiv-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/biorxiv-database"
+      },
+      {
+        "name": "bioservices",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/bioservices",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/bioservices"
+      },
+      {
+        "name": "brenda-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/brenda-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/brenda-database"
+      },
+      {
+        "name": "cellxgene-census",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/cellxgene-census",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/cellxgene-census"
+      },
+      {
+        "name": "chembl-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/chembl-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/chembl-database"
+      },
+      {
+        "name": "cirq",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/cirq",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/cirq"
+      },
+      {
+        "name": "citation-management",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/citation-management",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/citation-management"
+      },
+      {
+        "name": "clinical-decision-support",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinical-decision-support",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinical-decision-support"
+      },
+      {
+        "name": "clinical-reports",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinical-reports",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinical-reports"
+      },
+      {
+        "name": "clinicaltrials-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinicaltrials-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinicaltrials-database"
+      },
+      {
+        "name": "clinpgx-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinpgx-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinpgx-database"
+      },
+      {
+        "name": "clinvar-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinvar-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinvar-database"
+      },
+      {
+        "name": "cobrapy",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/cobrapy",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/cobrapy"
+      },
+      {
+        "name": "cosmic-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/cosmic-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/cosmic-database"
+      },
+      {
+        "name": "dask",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/dask",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/dask"
+      },
+      {
+        "name": "datacommons-client",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/datacommons-client",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/datacommons-client"
+      },
+      {
+        "name": "datamol",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/datamol",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/datamol"
+      },
+      {
+        "name": "deepchem",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/deepchem",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/deepchem"
+      },
+      {
+        "name": "deeptools",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/deeptools",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/deeptools"
+      },
+      {
+        "name": "denario",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/denario",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/denario"
+      },
+      {
+        "name": "diffdock",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/diffdock",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/diffdock"
+      },
+      {
+        "name": "dnanexus-integration",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/dnanexus-integration",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/dnanexus-integration"
+      },
+      {
+        "name": "drugbank-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/drugbank-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/drugbank-database"
+      },
+      {
+        "name": "ena-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/ena-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/ena-database"
+      },
+      {
+        "name": "ensembl-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/ensembl-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/ensembl-database"
+      },
+      {
+        "name": "esm",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/esm",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/esm"
+      },
+      {
+        "name": "etetoolkit",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/etetoolkit",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/etetoolkit"
+      },
+      {
+        "name": "exploratory-data-analysis",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/exploratory-data-analysis",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/exploratory-data-analysis"
+      },
+      {
+        "name": "fda-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/fda-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/fda-database"
+      },
+      {
+        "name": "flowio",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/flowio",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/flowio"
+      },
+      {
+        "name": "fluidsim",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/fluidsim",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/fluidsim"
+      },
+      {
+        "name": "gene-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/gene-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/gene-database"
+      },
+      {
+        "name": "generate-image",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/generate-image",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/generate-image"
+      },
+      {
+        "name": "geniml",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/geniml",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/geniml"
+      },
+      {
+        "name": "geo-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/geo-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/geo-database"
+      },
+      {
+        "name": "geopandas",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/geopandas",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/geopandas"
+      },
+      {
+        "name": "get-available-resources",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/get-available-resources",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/get-available-resources"
+      },
+      {
+        "name": "gget",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/gget",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/gget"
+      },
+      {
+        "name": "gtars",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/gtars",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/gtars"
+      },
+      {
+        "name": "gwas-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/gwas-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/gwas-database"
+      },
+      {
+        "name": "histolab",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/histolab",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/histolab"
+      },
+      {
+        "name": "hmdb-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/hmdb-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/hmdb-database"
+      },
+      {
+        "name": "hypogenic",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/hypogenic",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/hypogenic"
+      },
+      {
+        "name": "hypothesis-generation",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/hypothesis-generation",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/hypothesis-generation"
+      },
+      {
+        "name": "iso-13485-certification",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/iso-13485-certification",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/iso-13485-certification"
+      },
+      {
+        "name": "kegg-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/kegg-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/kegg-database"
+      },
+      {
+        "name": "labarchive-integration",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/labarchive-integration",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/labarchive-integration"
+      },
+      {
+        "name": "lamindb",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/lamindb",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/lamindb"
+      },
+      {
+        "name": "latchbio-integration",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/latchbio-integration",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/latchbio-integration"
+      },
+      {
+        "name": "latex-posters",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/latex-posters",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/latex-posters"
+      },
+      {
+        "name": "literature-review",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/literature-review",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/literature-review"
+      },
+      {
+        "name": "market-research-reports",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/market-research-reports",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/market-research-reports"
+      },
+      {
+        "name": "markitdown",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/markitdown",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/markitdown"
+      },
+      {
+        "name": "matchms",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/matchms",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/matchms"
+      },
+      {
+        "name": "matlab",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/matlab",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/matlab"
+      },
+      {
+        "name": "matplotlib",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/matplotlib",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/matplotlib"
+      },
+      {
+        "name": "medchem",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/medchem",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/medchem"
+      },
+      {
+        "name": "metabolomics-workbench-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/metabolomics-workbench-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/metabolomics-workbench-database"
+      },
+      {
+        "name": "modal",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/modal",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/modal"
+      },
+      {
+        "name": "molfeat",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/molfeat",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/molfeat"
+      },
+      {
+        "name": "networkx",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/networkx",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/networkx"
+      },
+      {
+        "name": "neurokit2",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/neurokit2",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/neurokit2"
+      },
+      {
+        "name": "neuropixels-analysis",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/neuropixels-analysis",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/neuropixels-analysis"
+      },
+      {
+        "name": "offer-k-dense-web",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/offer-k-dense-web",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/offer-k-dense-web"
+      },
+      {
+        "name": "omero-integration",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/omero-integration",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/omero-integration"
+      },
+      {
+        "name": "openalex-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/openalex-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/openalex-database"
+      },
+      {
+        "name": "opentargets-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/opentargets-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/opentargets-database"
+      },
+      {
+        "name": "opentrons-integration",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/opentrons-integration",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/opentrons-integration"
+      },
+      {
+        "name": "paper-2-web",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/paper-2-web",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/paper-2-web"
+      },
+      {
+        "name": "pathml",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pathml",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pathml"
+      },
+      {
+        "name": "pdb-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pdb-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pdb-database"
+      },
+      {
+        "name": "peer-review",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/peer-review",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/peer-review"
+      },
+      {
+        "name": "pennylane",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pennylane",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pennylane"
+      },
+      {
+        "name": "perplexity-search",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/perplexity-search",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/perplexity-search"
+      },
+      {
+        "name": "plotly",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/plotly",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/plotly"
+      },
+      {
+        "name": "polars",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/polars",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/polars"
+      },
+      {
+        "name": "pptx-posters",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pptx-posters",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pptx-posters"
+      },
+      {
+        "name": "protocolsio-integration",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/protocolsio-integration",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/protocolsio-integration"
+      },
+      {
+        "name": "pubchem-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pubchem-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pubchem-database"
+      },
+      {
+        "name": "pubmed-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pubmed-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pubmed-database"
+      },
+      {
+        "name": "pufferlib",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pufferlib",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pufferlib"
+      },
+      {
+        "name": "pydeseq2",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pydeseq2",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pydeseq2"
+      },
+      {
+        "name": "pydicom",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pydicom",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pydicom"
+      },
+      {
+        "name": "pyhealth",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pyhealth",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pyhealth"
+      },
+      {
+        "name": "pylabrobot",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pylabrobot",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pylabrobot"
+      },
+      {
+        "name": "pymatgen",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pymatgen",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pymatgen"
+      },
+      {
+        "name": "pymc",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pymc",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pymc"
+      },
+      {
+        "name": "pymoo",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pymoo",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pymoo"
+      },
+      {
+        "name": "pyopenms",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pyopenms",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pyopenms"
+      },
+      {
+        "name": "pysam",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pysam",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pysam"
+      },
+      {
+        "name": "pytdc",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pytdc",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pytdc"
+      },
+      {
+        "name": "pytorch-lightning",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pytorch-lightning",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pytorch-lightning"
+      },
+      {
+        "name": "qiskit",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/qiskit",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/qiskit"
+      },
+      {
+        "name": "qutip",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/qutip",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/qutip"
+      },
+      {
+        "name": "rdkit",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/rdkit",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/rdkit"
+      },
+      {
+        "name": "reactome-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/reactome-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/reactome-database"
+      },
+      {
+        "name": "research-grants",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/research-grants",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/research-grants"
+      },
+      {
+        "name": "research-lookup",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/research-lookup",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/research-lookup"
+      },
+      {
+        "name": "rowan",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/rowan",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/rowan"
+      },
+      {
+        "name": "scanpy",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scanpy",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scanpy"
+      },
+      {
+        "name": "scholar-evaluation",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scholar-evaluation",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scholar-evaluation"
+      },
+      {
+        "name": "scientific-brainstorming",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-brainstorming",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-brainstorming"
+      },
+      {
+        "name": "scientific-critical-thinking",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-critical-thinking",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-critical-thinking"
+      },
+      {
+        "name": "scientific-schematics",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-schematics",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-schematics"
+      },
+      {
+        "name": "scientific-slides",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-slides",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-slides"
+      },
+      {
+        "name": "scientific-visualization",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-visualization",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-visualization"
+      },
+      {
+        "name": "scientific-writing",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-writing",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-writing"
+      },
+      {
+        "name": "scikit-bio",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scikit-bio",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scikit-bio"
+      },
+      {
+        "name": "scikit-learn",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scikit-learn",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scikit-learn"
+      },
+      {
+        "name": "scikit-survival",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scikit-survival",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scikit-survival"
+      },
+      {
+        "name": "scvi-tools",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scvi-tools",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scvi-tools"
+      },
+      {
+        "name": "seaborn",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/seaborn",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/seaborn"
+      },
+      {
+        "name": "shap",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/shap",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/shap"
+      },
+      {
+        "name": "simpy",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/simpy",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/simpy"
+      },
+      {
+        "name": "stable-baselines3",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/stable-baselines3",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/stable-baselines3"
+      },
+      {
+        "name": "statistical-analysis",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/statistical-analysis",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/statistical-analysis"
+      },
+      {
+        "name": "statsmodels",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/statsmodels",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/statsmodels"
+      },
+      {
+        "name": "string-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/string-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/string-database"
+      },
+      {
+        "name": "sympy",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/sympy",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/sympy"
+      },
+      {
+        "name": "torch_geometric",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/torch_geometric",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/torch_geometric"
+      },
+      {
+        "name": "torchdrug",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/torchdrug",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/torchdrug"
+      },
+      {
+        "name": "transformers",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/transformers",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/transformers"
+      },
+      {
+        "name": "treatment-plans",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/treatment-plans",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/treatment-plans"
+      },
+      {
+        "name": "umap-learn",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/umap-learn",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/umap-learn"
+      },
+      {
+        "name": "uniprot-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/uniprot-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/uniprot-database"
+      },
+      {
+        "name": "uspto-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/uspto-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/uspto-database"
+      },
+      {
+        "name": "vaex",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/vaex",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/vaex"
+      },
+      {
+        "name": "venue-templates",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/venue-templates",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/venue-templates"
+      },
+      {
+        "name": "zarr-python",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/zarr-python",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/zarr-python"
+      },
+      {
+        "name": "zinc-database",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/zinc-database",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/zinc-database"
+      }
+    ]
+  },
+  "ComposioHQ/awesome-claude-skills": {
+    "stars": 24469,
+    "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
+    "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+    "type": "skills",
+    "skills": [
+      {
+        "name": "artifacts-builder",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/artifacts-builder",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/artifacts-builder"
+      },
+      {
+        "name": "brand-guidelines",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/brand-guidelines",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/brand-guidelines"
+      },
+      {
+        "name": "canvas-design",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/canvas-design",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/canvas-design"
+      },
+      {
+        "name": "changelog-generator",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/changelog-generator",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/changelog-generator"
+      },
+      {
+        "name": "competitive-ads-extractor",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/competitive-ads-extractor",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/competitive-ads-extractor"
+      },
+      {
+        "name": "connect",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/connect",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/connect"
+      },
+      {
+        "name": "connect-apps",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/connect-apps",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/connect-apps"
+      },
+      {
+        "name": "content-research-writer",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/content-research-writer",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/content-research-writer"
+      },
+      {
+        "name": "developer-growth-analysis",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/developer-growth-analysis",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/developer-growth-analysis"
+      },
+      {
+        "name": "domain-name-brainstormer",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/domain-name-brainstormer",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/domain-name-brainstormer"
+      },
+      {
+        "name": "file-organizer",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/file-organizer",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/file-organizer"
+      },
+      {
+        "name": "image-enhancer",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/image-enhancer",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/image-enhancer"
+      },
+      {
+        "name": "internal-comms",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/internal-comms",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/internal-comms"
+      },
+      {
+        "name": "invoice-organizer",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/invoice-organizer",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/invoice-organizer"
+      },
+      {
+        "name": "langsmith-fetch",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/langsmith-fetch",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/langsmith-fetch"
+      },
+      {
+        "name": "lead-research-assistant",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/lead-research-assistant",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/lead-research-assistant"
+      },
+      {
+        "name": "mcp-builder",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/mcp-builder",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/mcp-builder"
+      },
+      {
+        "name": "meeting-insights-analyzer",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/meeting-insights-analyzer",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/meeting-insights-analyzer"
+      },
+      {
+        "name": "raffle-winner-picker",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/raffle-winner-picker",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/raffle-winner-picker"
+      },
+      {
+        "name": "skill-creator",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/skill-creator",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/skill-creator"
+      },
+      {
+        "name": "skill-share",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/skill-share",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/skill-share"
+      },
+      {
+        "name": "slack-gif-creator",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/slack-gif-creator",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/slack-gif-creator"
+      },
+      {
+        "name": "tailored-resume-generator",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/tailored-resume-generator",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/tailored-resume-generator"
+      },
+      {
+        "name": "template-skill",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/template-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/template-skill"
+      },
+      {
+        "name": "theme-factory",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/theme-factory",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/theme-factory"
+      },
+      {
+        "name": "twitter-algorithm-optimizer",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/twitter-algorithm-optimizer",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/twitter-algorithm-optimizer"
+      },
+      {
+        "name": "video-downloader",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/video-downloader",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/video-downloader"
+      },
+      {
+        "name": "webapp-testing",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/webapp-testing",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/webapp-testing"
+      }
+    ]
+  },
+  "travisvn/awesome-claude-skills": {
+    "stars": 5747,
+    "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows \u2014 particularly Claude Code",
+    "url": "https://github.com/travisvn/awesome-claude-skills",
+    "type": "curated_list",
+    "skills": [
+      {
+        "name": "superpowers-skills",
+        "description": "Community-editable skills repository",
+        "github_url": "https://github.com/obra/superpowers-skills",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers-skills",
+        "source": "readme"
+      },
+      {
+        "name": "anthropics/skills",
+        "description": "Official public repository for Skills",
+        "github_url": "https://github.com/anthropics/skills",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills",
+        "source": "readme"
+      },
+      {
+        "name": "Claude Cookbooks - Skills",
+        "description": "Example notebooks and tutorials",
+        "github_url": "https://github.com/anthropics/claude-cookbooks/tree/main/skills",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/claude-cookbooks/tree/main/skills",
+        "source": "readme"
+      },
+      {
+        "name": "Issue #268",
+        "description": "Workaround: Manually specify skill paths",
+        "github_url": "https://github.com/anthropics/claude-agent-sdk-python/issues/268",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/claude-agent-sdk-python/issues/268",
+        "source": "readme"
+      },
+      {
+        "name": "Official Skills Repository Issues",
+        "description": "[Claude Documentation](https://docs.claude.com/)",
+        "github_url": "https://github.com/anthropics/skills/issues",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/issues",
+        "source": "readme"
+      },
+      {
+        "name": "docx",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/docx",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/docx",
+        "source": "readme"
+      },
+      {
+        "name": "pdf",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/pdf",
+        "source": "readme"
+      },
+      {
+        "name": "pptx",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/pptx",
+        "source": "readme"
+      },
+      {
+        "name": "xlsx",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/xlsx",
+        "source": "readme"
+      },
+      {
+        "name": "algorithmic-art",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+        "source": "readme"
+      },
+      {
+        "name": "canvas-design",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+        "source": "readme"
+      },
+      {
+        "name": "slack-gif-creator",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
+        "source": "readme"
+      },
+      {
+        "name": "frontend-design",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/blob/main/skills/frontend-design",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/blob/main/skills/frontend-design",
+        "source": "readme"
+      },
+      {
+        "name": "artifacts-builder",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/artifacts-builder",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/artifacts-builder",
+        "source": "readme"
+      },
+      {
+        "name": "mcp-builder",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+        "source": "readme"
+      },
+      {
+        "name": "webapp-testing",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+        "source": "readme"
+      },
+      {
+        "name": "brand-guidelines",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+        "source": "readme"
+      },
+      {
+        "name": "internal-comms",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+        "source": "readme"
+      },
+      {
+        "name": "skill-creator",
+        "description": "",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+        "source": "readme"
+      },
+      {
+        "name": "obra/superpowers",
+        "description": "",
+        "github_url": "https://github.com/obra/superpowers",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers",
+        "source": "readme"
+      },
+      {
+        "name": "obra/superpowers-lab",
+        "description": "",
+        "github_url": "https://github.com/obra/superpowers-lab",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers-lab",
+        "source": "readme"
+      },
+      {
+        "name": "ios-simulator-skill",
+        "description": "",
+        "github_url": "https://github.com/conorluddy/ios-simulator-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/conorluddy/ios-simulator-skill",
+        "source": "readme"
+      },
+      {
+        "name": "ffuf-web-fuzzing",
+        "description": "",
+        "github_url": "https://github.com/jthack/ffuf_claude_skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/jthack/ffuf_claude_skill",
+        "source": "readme"
+      },
+      {
+        "name": "playwright-skill",
+        "description": "",
+        "github_url": "https://github.com/lackeyjb/playwright-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/lackeyjb/playwright-skill",
+        "source": "readme"
+      },
+      {
+        "name": "claude-d3js-skill",
+        "description": "",
+        "github_url": "https://github.com/chrisvoncsefalvay/claude-d3js-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/chrisvoncsefalvay/claude-d3js-skill",
+        "source": "readme"
+      },
+      {
+        "name": "claude-scientific-skills",
+        "description": "",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills",
+        "source": "readme"
+      },
+      {
+        "name": "web-asset-generator",
+        "description": "",
+        "github_url": "https://github.com/alonw0/web-asset-generator",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/alonw0/web-asset-generator",
+        "source": "readme"
+      },
+      {
+        "name": "loki-mode",
+        "description": "",
+        "github_url": "https://github.com/asklokesh/claudeskill-loki-mode",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/asklokesh/claudeskill-loki-mode",
+        "source": "readme"
+      },
+      {
+        "name": "Trail of Bits Security Skills",
+        "description": "",
+        "github_url": "https://github.com/trailofbits/skills",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/trailofbits/skills",
+        "source": "readme"
+      },
+      {
+        "name": "yusufkaraaslan/Skill_Seekers",
+        "description": "",
+        "github_url": "https://github.com/yusufkaraaslan/Skill_Seekers",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/yusufkaraaslan/Skill_Seekers",
+        "source": "readme"
+      }
+    ]
+  },
+  "BehiSecc/awesome-claude-skills": {
+    "stars": 4155,
+    "description": "A curated list of Claude Skills.",
+    "url": "https://github.com/BehiSecc/awesome-claude-skills",
+    "type": "curated_list",
+    "skills": [
+      {
+        "name": "docx",
+        "description": "Create, edit, analyze Word docs with tracked changes, comments, formatting.",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/docx",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/docx",
+        "source": "readme"
+      },
+      {
+        "name": "pdf",
+        "description": "Extract text, tables, metadata, merge & annotate PDFs.",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/pdf",
+        "source": "readme"
+      },
+      {
+        "name": "pptx",
+        "description": "Read, generate, and adjust slides, layouts, templates.",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/pptx",
+        "source": "readme"
+      },
+      {
+        "name": "xlsx",
+        "description": "Spreadsheet manipulation: formulas, charts, data transformations.",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/xlsx",
+        "source": "readme"
+      },
+      {
+        "name": "revealjs-skill",
+        "description": "Generate polished, professional presentations using the Reveal.js HTML presentation framework.",
+        "github_url": "https://github.com/ryanbbrown/revealjs-skill/tree/main",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ryanbbrown/revealjs-skill/tree/main",
+        "source": "readme"
+      },
+      {
+        "name": "web-artifacts-builder",
+        "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui).",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+        "source": "readme"
+      },
+      {
+        "name": "test-driven-development",
+        "description": "Use when implementing any feature or bugfix, before writing implementation code",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/test-driven-development",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/test-driven-development",
+        "source": "readme"
+      },
+      {
+        "name": "using-git-worktrees",
+        "description": "Creates isolated git worktrees with smart directory selection and safety verification.",
+        "github_url": "https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/",
+        "source": "readme"
+      },
+      {
+        "name": "finishing-a-development-branch",
+        "description": "Guides completion of development work by presenting clear options and handling chosen workflow.",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch",
+        "source": "readme"
+      },
+      {
+        "name": "pypict-claude-skill",
+        "description": "Design comprehensive test cases using PICT (Pairwise Independent Combinatorial Testing) for requirements or code, generating optimized test suites with pairwise coverage.",
+        "github_url": "https://github.com/omkamal/pypict-claude-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/omkamal/pypict-claude-skill",
+        "source": "readme"
+      },
+      {
+        "name": "aws-skills",
+        "description": "AWS development with CDK best practices, cost optimization MCP servers, and serverless/event-driven architecture patterns.",
+        "github_url": "https://github.com/zxkane/aws-skills",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/zxkane/aws-skills",
+        "source": "readme"
+      },
+      {
+        "name": "claude-starter",
+        "description": "Production-ready Claude Code configuration template with 40 auto-activating skills across 8 domains, TOON format support for 30-60% token savings, and native Zig encoder/decoder.",
+        "github_url": "https://github.com/raintree-technology/claude-starter",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/raintree-technology/claude-starter",
+        "source": "readme"
+      },
+      {
+        "name": "move-code-quality-skill",
+        "description": "Analyzes Move language packages against the official Move Book Code Quality Checklist for Move 2024 Edition compliance and best practices.",
+        "github_url": "https://github.com/1NickPappas/move-code-quality-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/1NickPappas/move-code-quality-skill",
+        "source": "readme"
+      },
+      {
+        "name": "claude-code-terminal-title",
+        "description": "Gives each Claud Code terminal window a dynamic title that describes the work being done so you don't lose track of what terminal window is doing what.",
+        "github_url": "https://github.com/bluzername/claude-code-terminal-title",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/bluzername/claude-code-terminal-title",
+        "source": "readme"
+      },
+      {
+        "name": "charles-proxy-extract",
+        "description": "Claude is able to extract and analyze HTTP traffic from Charles Proxy session files.",
+        "github_url": "https://github.com/wannabehero/charles-proxy-extract-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/wannabehero/charles-proxy-extract-skill",
+        "source": "readme"
+      },
+      {
+        "name": "plugin-authoring",
+        "description": "Ambient guidance for creating, modifying, and debugging Claude Code plugins with schemas, templates, validation workflows, and troubleshooting.",
+        "github_url": "https://github.com/ivan-magda/claude-code-plugin-template/tree/main/plugins/plugin-development/skills/plugin-authoring",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ivan-magda/claude-code-plugin-template/tree/main/plugins/plugin-development/skills/plugin-authoring",
+        "source": "readme"
+      },
+      {
+        "name": "claude-skills",
+        "description": "65 full-stack development skills with progressive disclosure, covering React, NestJS, Python, DevOps, and 30+ frameworks.",
+        "github_url": "https://github.com/jeffallan/claude-skills",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/jeffallan/claude-skills",
+        "source": "readme"
+      },
+      {
+        "name": "root-cause-tracing",
+        "description": "Use when errors occur deep in execution and you need to trace back to find the original trigger",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/root-cause-tracing",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/root-cause-tracing",
+        "source": "readme"
+      },
+      {
+        "name": "csv-data-summarizer-claude-skill",
+        "description": "Automatically analyzes CSVs: columns, distributions, missing data, correlations.",
+        "github_url": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
+        "source": "readme"
+      },
+      {
+        "name": "postgres",
+        "description": "Execute safe read-only SQL queries against PostgreSQL databases with multi-connection support and defense-in-depth security.",
+        "github_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres",
+        "source": "readme"
+      },
+      {
+        "name": "claude-scientific-skills",
+        "description": "125+ scientific skills for bioinformatics, cheminformatics, clinical research, and machine learning.",
+        "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/K-Dense-AI/claude-scientific-skills",
+        "source": "readme"
+      },
+      {
+        "name": "materials-simulation-skills",
+        "description": "Agent skills for computational materials science: numerical stability, time-stepping, linear solvers, mesh generation, simulation validation, parameter optimization, and post-processing.",
+        "github_url": "https://github.com/HeshamFS/materials-simulation-skills",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/HeshamFS/materials-simulation-skills",
+        "source": "readme"
+      },
+      {
+        "name": "deep-research",
+        "description": "Execute autonomous multi-step research using Gemini Deep Research Agent for market analysis, competitive landscaping, and literature reviews.",
+        "github_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research",
+        "source": "readme"
+      },
+      {
+        "name": "article-extractor",
+        "description": "Extract full article text and metadata from web pages.",
+        "github_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/article-extractor",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/article-extractor",
+        "source": "readme"
+      },
+      {
+        "name": "content-research-writer",
+        "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/content-research-writer",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/content-research-writer",
+        "source": "readme"
+      },
+      {
+        "name": "internal-comms",
+        "description": "Create internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc)",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+        "source": "readme"
+      },
+      {
+        "name": "brainstorming",
+        "description": "Transform rough ideas into fully-formed designs through structured questioning and alternative exploration.",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/brainstorming",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/tree/main/skills/brainstorming",
+        "source": "readme"
+      },
+      {
+        "name": "family-history-research",
+        "description": "Provides assistance with planning family history and genealogy research projects.",
+        "github_url": "https://github.com/emaynard/claude-family-history-research-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/emaynard/claude-family-history-research-skill",
+        "source": "readme"
+      },
+      {
+        "name": "tapestry",
+        "description": "Interlink and summarize related documents into knowledge networks.",
+        "github_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/tapestry",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/tapestry",
+        "source": "readme"
+      },
+      {
+        "name": "ship-learn-next",
+        "description": "Skill to help iterate on what to build or learn next, based on feedback loops.",
+        "github_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/ship-learn-next",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/ship-learn-next",
+        "source": "readme"
+      },
+      {
+        "name": "youtube-transcript",
+        "description": "Fetch transcripts from YouTube videos and prepare summaries.",
+        "github_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/youtube-transcript",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/youtube-transcript",
+        "source": "readme"
+      },
+      {
+        "name": "video-downloader",
+        "description": "Downloads videos from YouTube and other platforms for offline viewing, editing, or archival.",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/video-downloader",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/video-downloader",
+        "source": "readme"
+      },
+      {
+        "name": "image-enhancer",
+        "description": "Improves the quality of images, especially screenshots.",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/image-enhancer",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/image-enhancer",
+        "source": "readme"
+      },
+      {
+        "name": "imagen",
+        "description": "Generate images using Google Gemini's image generation API for UI mockups, icons, and visual assets.",
+        "github_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen",
+        "source": "readme"
+      },
+      {
+        "name": "claude-epub-skill",
+        "description": "Parse and analyze EPUB ebook contents for querying or summarizing.",
+        "github_url": "https://github.com/smerchek/claude-epub-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/smerchek/claude-epub-skill",
+        "source": "readme"
+      },
+      {
+        "name": "video-prompting-skill",
+        "description": "Draft and refine prompts for video generation models (LTX-2, Sora, Veo 3, etc.)",
+        "github_url": "https://github.com/Square-Zero-Labs/video-prompting-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/Square-Zero-Labs/video-prompting-skill",
+        "source": "readme"
+      },
+      {
+        "name": "claude-ally-health",
+        "description": "A comprehensive health assistant for Claude to analyze medical reports, track health metrics, and provide personalized wellness suggestions.",
+        "github_url": "https://github.com/huifer/Claude-Ally-Health",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/huifer/Claude-Ally-Health",
+        "source": "readme"
+      },
+      {
+        "name": "git-pushing",
+        "description": "Automate git operations and repository interactions.",
+        "github_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/git-pushing",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/git-pushing",
+        "source": "readme"
+      },
+      {
+        "name": "linear-claude-skill",
+        "description": "Manage Linear issues, projects, and teams with MCP tools, SDK scripts, and GraphQL fallbacks for reliable project tracking.",
+        "github_url": "https://github.com/wrsmith108/linear-claude-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/wrsmith108/linear-claude-skill",
+        "source": "readme"
+      },
+      {
+        "name": "linear-cli-skill",
+        "description": "A skill teaching claude how to use linear-CLI (provided alongside the skill), meant to replace linear MCP.",
+        "github_url": "https://github.com/Valian/linear-cli-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/Valian/linear-cli-skill",
+        "source": "readme"
+      },
+      {
+        "name": "meeting-insights-analyzer",
+        "description": "Transforms your meeting transcripts into actionable insights about your communication patterns",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/blob/master/meeting-insights-analyzer/",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/blob/master/meeting-insights-analyzer/",
+        "source": "readme"
+      },
+      {
+        "name": "review-implementing",
+        "description": "Evaluate code implementation plans and align with specs.",
+        "github_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/review-implementing",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/review-implementing",
+        "source": "readme"
+      },
+      {
+        "name": "test-fixing",
+        "description": "Detect failing tests and propose patches or fixes.",
+        "github_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/test-fixing",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/test-fixing",
+        "source": "readme"
+      },
+      {
+        "name": "plannotator",
+        "description": "Interactive plan review UI for Claude Code with visual annotation, offline sharing, and Obsidian/Bear integration.",
+        "github_url": "https://github.com/backnotprop/plannotator",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/backnotprop/plannotator",
+        "source": "readme"
+      },
+      {
+        "name": "claude-skills",
+        "description": "9 project workflow commands (discovery, planning, execution, retrospectives) with Jira/Confluence integration.",
+        "github_url": "https://github.com/jeffallan/claude-skills",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/jeffallan/claude-skills",
+        "source": "readme"
+      },
+      {
+        "name": "outline",
+        "description": "Search, read, create, and manage documents in Outline wiki instances (cloud or self-hosted).",
+        "github_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/outline",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/sanjay3290/ai-skills/tree/main/skills/outline",
+        "source": "readme"
+      },
+      {
+        "name": "defense-in-depth",
+        "description": "Implement multi-layered testing and security best practices.",
+        "github_url": "https://github.com/obra/superpowers/blob/main/skills/defense-in-depth",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/blob/main/skills/defense-in-depth",
+        "source": "readme"
+      },
+      {
+        "name": "ffuf_claude_skill",
+        "description": "Integrate Claude with FFUF (fuzzing) and analyze results for vulnerabilities.",
+        "github_url": "https://github.com/jthack/ffuf_claude_skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/jthack/ffuf_claude_skill",
+        "source": "readme"
+      },
+      {
+        "name": "systematic-debugging",
+        "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+        "github_url": "https://github.com/obra/superpowers/blob/main/skills/systematic-debugging",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/obra/superpowers/blob/main/skills/systematic-debugging",
+        "source": "readme"
+      },
+      {
+        "name": "Trail of Bits Security Skills",
+        "description": "Security skills for static analysis with CodeQL/Semgrep, variant analysis, code auditing, and fix verification.",
+        "github_url": "https://github.com/trailofbits/skills",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/trailofbits/skills",
+        "source": "readme"
+      },
+      {
+        "name": "varlock-claude-skill",
+        "description": "Secure environment variable management ensuring secrets never appear in Claude sessions, terminals, logs, or git commits.",
+        "github_url": "https://github.com/wrsmith108/varlock-claude-skill",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/wrsmith108/varlock-claude-skill",
+        "source": "readme"
+      },
+      {
+        "name": "webapp-testing",
+        "description": "Toolkit for interacting with and testing local web applications using Playwright.",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+        "source": "readme"
+      },
+      {
+        "name": "file-organizer",
+        "description": "Intelligently organizes your files and folders across your computer.",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/file-organizer",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/tree/master/file-organizer",
+        "source": "readme"
+      },
+      {
+        "name": "invoice-organizer",
+        "description": "Automatically organizes invoices and receipts for tax preparation",
+        "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/blob/master/invoice-organizer/SKILL.md",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/ComposioHQ/awesome-claude-skills/blob/master/invoice-organizer/SKILL.md",
+        "source": "readme"
+      },
+      {
+        "name": "skill-creator",
+        "description": "Template / helper to build new Claude skills.",
+        "github_url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+        "source": "readme"
+      },
+      {
+        "name": "template-skill",
+        "description": "Minimal skeleton for a new skill project structure.",
+        "github_url": "https://github.com/anthropics/skills/tree/main/template",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/anthropics/skills/tree/main/template",
+        "source": "readme"
+      },
+      {
+        "name": "glitternetwork/pinme",
+        "description": "",
+        "github_url": "https://github.com/glitternetwork/skills/tree/main/pinme",
+        "import_url": "https://manus.im/app#settings/skills/import?githubUrl=https://github.com/glitternetwork/skills/tree/main/pinme",
+        "source": "readme"
+      }
+    ]
+  }
+}
+
+
+
+
+
+
+
+
+https://mcpmarket.com/tools/skills
+
+npm i skillfish
+
+Other powerful links I found!!
+
+https://mcpmarket.com/server/context7-1
+
+https://mcpmarket.com/server/serena
+
+https://mcpmarket.com/server/magic-1
+
+https://mcpmarket.com/server/cua
+
+https://mcpmarket.com/server/superpowers
+
+https://mcpmarket.com/server/trendradar
+
+https://mcpmarket.com/server/openspec
+
+https://mcpmarket.com/server/github-15
+
+https://mcpmarket.com/server/task-master
+
+https://mcpmarket.com/server/trigger-dev
+
+https://mcpmarket.com/server/beads
+
+https://mcpmarket.com/server/fastapi
+
+https://mcpmarket.com/server/pipedream-1
+
+!!! https://mcpmarket.com/server/skill-seeker !!!
+
+https://mcpmarket.com/server/openmetadata-1
+
+https://mcpmarket.com/server/git-4
+
+https://mcpmarket.com/server/ghidra-1
+
+https://mcpmarket.com/server/youtube-transcript-6
+
+https://mcpmarket.com/server/fullstack-dev-skills-plugin
+
+https://mcpmarket.com/server/code2prompt
+
+!!! https://mcpmarket.com/server/chatgpt-autoexpert!!!
+
+https://mcpmarket.com/server/airweave
+
+https://mcpmarket.com/server/firecrawl-10
+
+https://mcpmarket.com/server/desktop-commander-1
+
+https://mcpmarket.com/server/claude-context
+
+https://mcpmarket.com/server/trafilatura
+
+!!!!! https://mcpmarket.com/server/trafilatura !!!!!
+!!!! https://mcpmarket.com/server/xcodebuild-2 !!!!!
+
+https://mcpmarket.com/server/notion-12
+(I use Notion daily and as you can see in my foundation layer repo, there's a part where it puts everything in Notion. I wonder if this could help and even if it doesn't fit into there, it still is super powerful because... everything, even today, we could immediately put all this in Notion. It could even serve as a backup memory layer where we put everything you want and then just make it available through progressive disclosure and a meta index card. I can't believe how powerful all these tools are lol. Every single one has its own powerful use case. 😨😨)
+
+https://mcpmarket.com/server/notebooklm-4
+(Oh. My. God. --- This is incredibly powerful. This whole website where I'm finding all of this stuff is absolutely insane lol. This is just amazing. This is a goldmine and then some times 5 lol. --- I mean truly this is so powerful just in terms of the unbelievable comprehensiveness of all of this. I mean we had this whole thing that I just have all of these links with, I would say, of course, the exception of a few of them or whatever, or even 25% of them, or even if it's 50% of them. Even if we end up not needing half of these, like the half that we do in degree, this is like we could do almost anything. I mean quite literally anything at all. I mean this, this is unbelievable. Anyway this is like I'm truly jaw-dropped)
+
+https://mcpmarket.com/server/langroid
+
+https://mcpmarket.com/tools/skills/github-integration-3
+
+https://mcpmarket.com/server/exa
+
+https://mcpmarket.com/server/mobile-next
+
+https://mcpmarket.com/server/microsandbox
+
+https://mcpmarket.com/server/spec-workflow-1
+
+https://mcpmarket.com/server/stakpak
+
+!!!!!! https://mcpmarket.com/server/stakpak !!!!!
+
+https://mcpmarket.com/server/axon-1
+
+https://mcpmarket.com/server/ghidrassist-1
+
+!!!!!!!!!!! https://mcpmarket.com/server/context-mode!!!!!!!!!
+!!!!!!!! https://mcpmarket.com/server/codemogger!!!!!!!!!
+
+https://mcpmarket.com/server/lucid
+
+https://mcpmarket.com/server/binary-ninja-headless
+
+https://mcpmarket.com/server/aris-auto-research-in-sleep
+
+
+
+
+
+
+Extra misc but powerful Links. 
+
+https://trycontexta.com/
+
+
+Skills. 

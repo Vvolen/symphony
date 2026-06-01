@@ -13,6 +13,7 @@ This catalog is the front door for reusable long-horizon systems, reference arch
 
 | Module | Use when | Status |
 | --- | --- | --- |
+| [`icm-operating-model.md`](icm-operating-model.md) | Organizing long-horizon, multi-stage work as filesystem structure (ICM Layers 0–4) plus the eval/provenance layers ICM omits. | active |
 | [`copilot-eclipse-capability-map.md`](copilot-eclipse-capability-map.md) | Mining Copilot for Eclipse / Eclipse governance for agentic architecture ideas. | researched |
 | [`repo-hydration-architecture.md`](repo-hydration-architecture.md) | Designing this repo so any agent can hydrate into a long-horizon task quickly. | active |
 | [`github-actions-and-supabase-playbook.md`](github-actions-and-supabase-playbook.md) | Adding repo-native automation, GitHub Actions, and Supabase/memory backend scaffolding. | planned |

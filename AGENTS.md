@@ -26,10 +26,21 @@ Use the "standing on the shoulders of giants" pattern for research-heavy work:
 
 - `.agents/skills/` stores repo-scoped Codex skills.
 - `.codex/` stores Codex-oriented local configuration examples and repo skills.
+- `bus/` is the append-only Copilot↔Codex communication channel (the agent "event bus").
 - `docs/governance/` stores operating policy for agents, scripts, secrets, tools, and long-horizon runs.
+- `docs/library/` stores the ingested source corpus (read-only reference material / ICM Layer 3).
 - `docs/research/` stores sourced research briefs and templates.
 - `docs/systems/` stores reusable architecture modules, playbooks, and procurement candidates.
+- `workspaces/` stores ICM-structured long-horizon workflows; copy `workspaces/_template-icm/` to start one.
 - `scripts/` stores low-risk helper scripts for diagnostics and checks.
+
+## Operating model
+
+For long-horizon, multi-stage work, organize context with the ICM operating model
+(`docs/systems/icm-operating-model.md`): keep Layer 3 *constraints to obey* separate from Layer 4
+*material to transform*, load only each stage's slice, and make every output an editable file. ICM is
+the inner harness; add per-stage evals, evidence/claim/decision separation, and append-only
+provenance on top (ICM alone has no eval discipline, which risks "durable garbage").
 
 ## Validation
 

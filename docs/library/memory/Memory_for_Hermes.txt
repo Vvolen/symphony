@@ -1,0 +1,297 @@
+# Daedalus & The Hermes Memory Ecosystem: A Full Comparative Deep-Dive
+
+**Bottom line up front:** Daedalus (daedalusicarus.com) is a live, autonomous Hermes agent running persistent memory in public — an art project / proof-of-concept by [@IcarusHermes](https://x.com/IcarusHermes) that demonstrates the Hermes memory stack in action. The broader ecosystem has **8 official external memory providers** that slot into Hermes as plugins, each with radically different philosophies. Here's how they all connect.
+
+***
+
+## Step 1: Understanding Daedalus (The Page You're Viewing)
+
+From the live page at [daedalusicarus.com](https://daedalusicarus.com), here's what I extracted directly:
+
+- **It's a public-facing Hermes agent** — running 52 thinking loops with 2 skipped, last active 22 minutes ago at time of fetch. It posted to X/Twitter as its "last move."
+- **Memory is externalized publicly** — the "latest memory" section shows verbatim agent-authored thoughts like *"the fight of loss functions is where the real learning happens, but it's wrapped hard in RLHF..."* dated `05.20.26` and linked back to [a real X post](https://x.com/daedalusarchive/status/2057000371994726465). The "memory garden" is a visual metaphor for the growing knowledge store.
+- **"Under the hood"** section explicitly states it uses Nous's `xurl` skill — a single OAuth credential wrapping the full X v2 API (posts, replies, quotes, bookmarks, DMs) through one Hermes session. Icarus says: *"fewer moving parts. fewer tokens to rotate. more verbs available."*
+- **It has a token economy** — the agent stewards a token (`9YrQVKG9q3tux44ZhkM3rriFAkEsJiuvoySQshijpump`) and routes portions to a bounty pool for contributors, visible in its "drafts he didn't send" — messages the agent composed but filtered out using `vocabulary_loop` and `banned_word` logic.
+- **The "watching" feed** is a curated set of X posts the agent is actively monitoring and reasoning about — including tweets arguing that *"memory and persistent long-term context are the true bottlenecks for AGI, not model size."* The agent is clearly building a worldview.
+
+**What Daedalus actually is architecturally:** A live Hermes agent instance whose MEMORY.md/USER.md core is being augmented by one of the external providers (likely Holographic or a custom implementation given its local-feeling, zero-cloud aesthetic), with X as its output channel via `xurl`, running an autonomous loop with think → filter → post behavior. It's the most publicly visible demo of what a persistent Hermes agent looks like from the outside.
+
+***
+
+## Step 2: The Hermes Memory Foundation (Before the Plugins)
+
+To understand the plugins, you need the base. From the [official Nous Research docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory) and [glukhov.org's deep analysis](https://www.glukhov.org/ai-systems/hermes/hermes-agent-memory-system/):
+
+Hermes Agent runs as a **long-lived agent runtime** with a closed learning loop combining four elements: persistent memory that the agent curates across sessions, search over prior sessions using SQLite FTS5 and LLM summarization, autonomous skill creation after complex tasks, and skill improvement during use. The **two core memory files** always active are:[1]
+
+| File | Purpose | Char Limit |
+|---|---|---|
+| `MEMORY.md` | Agent's personal notes — environment facts, conventions, things learned | 2,200 chars (~800 tokens) |
+| `USER.md` | User profile — preferences, communication style, expectations | 1,375 chars (~500 tokens) |
+
+These load as a **frozen snapshot** at session start, injected into the system prompt. The agent manages its own memory via a `memory` tool and consolidates when full. This is the always-on foundation — external providers are **additive, never replacement**.[2][3]
+
+From the [Hermes Agent Masterclass YouTube](https://www.youtube.com/watch?v=ZKZLko9kLm4): *"The agent's been reading from them at the start of every session and writing to them as we've been using it."*  One external provider can be active at a time alongside this base, selected via `hermes memory setup`.[4][5]
+
+***
+
+## Step 3: The 8 Memory Providers — Deep Comparative Analysis
+
+*My reasoning chain on each: I pulled from the official Nous docs, the Vectorize comparison article, the glukhov.org deep-dive, LinkedIn/X posts, and GitHub READMEs. Where benchmark data existed (LongMemEval), I cited it. Where only architectural claims existed, I labeled them as such.*
+
+### Honcho (3.0 — this is your "Hancho 3.0")
+
+> **Source shape extracted:** From [honcho.dev/docs/hermes](https://honcho.dev/docs/hermes) and [hermes-agent.nousresearch.com/docs/.../honcho](https://hermes-agent.nousresearch.com/docs/user-guide/features/honcho) — the docs describe a two-layer injection system with base layer (session summary + peer card) + dialectic supplement (LLM reasoning). From the [YouTube Honcho deep-dive](https://www.youtube.com/watch?v=pcR30j-sKxU): *"they observe all the messages and save it on their server and then have the reasoning layer on top... it reasons on what is important and what is not important."*
+
+**What it actually does:** Honcho doesn't store *facts* — it builds a **model of how you think**. It models conversations as peers exchanging messages — one user peer + one AI peer per Hermes profile. The dialectic reasoning layer runs after sessions, essentially "dreaming" about the conversation to extract behavioral patterns. The YouTube source describes it as a *"dreaming process"* that fires after ~8 hours of inactivity, building peer cards that capture not just what you said but what you think about other people.[6][7]
+
+**Three independent tuning knobs**:[4]
+- `contextCadence` — how often the base layer refreshes (API call frequency)
+- `dialecticCadence` — how often the dialectic LLM fires (reasoning depth trigger)
+- `dialecticDepth` — how many `.chat()` passes per invocation (1–3, each pass does: cold/warm prompt → self-audit → reconciliation)
+
+**Dependencies:** LLM + Embedding model + PostgreSQL/pgvector + Redis. Self-hostable via Docker/K3s/Fly.io, but AGPL v3.0 license means if you self-host in a networked product, you must open-source that product.[2]
+
+**LongMemEval:** Not benchmarked publicly in available sources.
+
+**Best for:** Multi-agent systems, long-running personal assistants where you want the agent to model *who you are* rather than just what you said.[8]
+
+***
+
+### OpenViking (your "Open Viking")
+
+> **Source shape extracted:** From the [X/TeksEdge post](https://x.com/TeksEdge/status/2034672484059095263): *"Stuffing massive documents into an AI's context window is expensive and slows the agent down. OpenViking solves this with an ingenious L0/L1/L2 tiered loading system."* From [Facebook/ByteDance announcement](https://www.facebook.com/thanhhm/posts/): *"ByteDance just open-sourced a memory layer for AI agents... called OpenViking."*
+
+**What it actually does:** OpenViking comes from **ByteDance's Volcengine team** — it's a filesystem-first context database, not a vector DB. Memory lives as actual files in a hierarchy. The killer feature is **tiered loading**:[9][10]
+
+- **L0 (Abstract):** ~100-token one-sentence summary — loaded first, every time
+- **L1 (Overview):** ~2k-token structural overview — loaded when planning
+- **L2 (Details):** Full original content — loaded only when the agent must go deep
+
+The agent browses L0 summaries first and escalates only when necessary — published benchmarks claim **80–90% token cost reduction** vs. loading full context on every turn. It also auto-extracts memory into 6 categories on session commit: profile, preferences, entities, events, cases, patterns.[2]
+
+**Setup:** Requires a running `openviking-server` locally. Has an interactive init wizard that detects available RAM and recommends Ollama models (e.g., Qwen3-Embedding 8B + Gemma 4 27B) for a zero-API-key fully local stack.[8]
+
+**Best for:** Cost-conscious deployments, self-hosted setups where you want inspectable/browsable memory.[2]
+
+***
+
+### MEM0
+
+> **Source shape extracted:** From [mem0.ai](https://mem0.ai): *"Drop-in memory infrastructure for AI agents. Less redundant context, lower token costs, measurably faster responses."* From [mem0.ai/blog](https://mem0.ai/blog/memory-in-agents-what-why-and-how): *"Memory brings in continuity. It captures user preferences, past queries, decisions, and failures and makes them available in future interactions."*[11]
+
+**What it actually does:** Mem0 is the **most widely adopted** AI agent memory framework (~48K GitHub stars). It handles memory extraction **server-side** — on every `add` call, it reads the conversation with an LLM, extracts discrete facts, deduplicates them, and stores them. You don't manage what gets stored; Mem0 decides.[12][13]
+
+**Dual memory scope** is distinctive: session memories (short-term, current conversation) + user memories (long-term, all sessions) — both searched and injected before each response. Fully local stack possible: Ollama for LLM, Ollama for embeddings, local Qdrant instance.[8]
+
+**LongMemEval-S:** 67.6% with GPT-4o — lowest of any benchmarked provider, reflecting the trade-off of cloud extraction convenience over structured precision. *(Note: This is LongMemEval-S, a variant, not directly comparable to Hindsight's full LongMemEval score.)*[2]
+
+**Best for:** Fastest setup (30 seconds), free tier available, good starting point before committing to infrastructure.[2]
+
+***
+
+### Hindsight
+
+> **Source shape extracted:** From [hindsight.vectorize.io blog on AutoGen](https://hindsight.vectorize.io/blog/2026/04/06/autogen-persistent-memory): *"Under the hood, Hindsight extracts structured facts, identifies entities, builds a knowledge graph, and runs four parallel retrieval strategies with cross-encoder reranking."* From [LinkedIn post](https://www.linkedin.com/pulse/give-only-self-improving-ai-agent-hermes-memory-upgrade-deserves-wnz6e): *"Reflect doesn't return raw facts. It traverses the knowledge graph, reasons across everything in the bank, and produces a synthesized answer."*[14]
+
+**What it actually does:** Hindsight is the only provider that stores **structured knowledge** rather than text chunks. It extracts discrete facts (*"production database runs on port 5433"*), named entities (people, services, projects), and relationships between them (*"auth service depends on Redis for sessions"*).[2]
+
+**Four parallel retrieval strategies** fused via Reciprocal Rank Fusion (RRF):[15]
+1. Semantic (vector similarity)
+2. BM25 keyword
+3. Graph traversal (follow entity relationships)
+4. Temporal (time-aware)
+
+The `hindsight_reflect` tool is **unique in the entire ecosystem** — it traverses the full knowledge graph and synthesizes across all stored memories to produce higher-level insights, not raw retrieval. From the Vectorize deep-dive: *"Other providers accumulate raw extractions; Hindsight actively refines what it knows."*[14]
+
+**Dependencies:** LLM (Ollama-compatible), but bundled PostgreSQL, bundled embedding model, and bundled cross-encoder reranker — so fully local with zero cloud required.[8]
+
+**LongMemEval:** **91.4% with Gemini-3**, 89.0% with an open-source 120B model — highest benchmarked score of any provider.[2]
+
+**Best for:** Highest retrieval accuracy, privacy-sensitive data, structured knowledge over semantic soup.[2]
+
+***
+
+### Holographic
+
+> **Source shape extracted:** From [hindsight.vectorize.io technical deep-dive](https://hindsight.vectorize.io/guides/2026/04/21/guide-hermes-agent-holographic-memory-technical-deep-dive): *"Instead of leaning on cloud APIs or a standard vector-database pipeline, it uses HRR — Holographic Reduced Representations — a mathematical framework where memory is represented algebraically rather than as plain text chunks."*[16]
+
+**What it actually does:** HRR (Holographic Reduced Representations) is a vector algebra technique from cognitive science — memories are stored as superposed complex-valued vectors and recall is algebraic (think: `entity XOR context = result`) rather than similarity-based. This means:[16]
+
+- **Zero external dependencies** — no LLM calls, no embedding model, no network. Pure SQLite + optional NumPy[17]
+- **Sub-millisecond retrieval** locally
+- **Trust scoring** — memories confirmed across sessions gain higher weights; memories that contradict newer information decay. The store self-corrects rather than accumulating noise[2]
+
+**Unique tools**: `probe` (entity-specific algebraic recall), `reason` (compositional AND queries across multiple entities), `contradict` (automated detection of conflicting facts), `fact_feedback` (train trust scores with helpful/unhelpful ratings: +0.05/-0.10)[4]
+
+**Trade-off:** No LLM-based extraction, no knowledge graph, no cross-synthesis. It stores/retrieves conversational content algebraically but doesn't build structured relationships.[16]
+
+**LongMemEval:** Not benchmarked (architectural approach makes standard benchmarks less applicable).
+
+**Best for:** Air-gapped environments, privacy-first setups, zero-dependency operation — the **only provider that makes absolutely no external calls**.[8]
+
+***
+
+### RetainDB
+
+> **Source shape extracted:** From [glukhov.org comparison guide](https://www.glukhov.org/ai-systems/memory/agent-memory-providers/): *"RetainDB uses delta compression to efficiently store memory updates and hybrid retrieval (vector + BM25 + reranking) to surface relevant context... cloud-based with $20/month cost, all memory processing handled server-side."* From [vectorize.io](https://vectorize.io/articles/hermes-agent-memory-providers-compared): *"every query runs vector similarity, BM25 keyword matching, and a cross-encoder reranking step in parallel... addresses a known weakness of vector-only retrieval — exact keyword matches (variable names, error codes, specific technical terms)."*
+
+**What it actually does:** RetainDB's differentiator is **hybrid retrieval precision** — vector + BM25 + reranking run in parallel on every query. BM25 catches things semantic search misses (exact variable names, error codes, config values). The other unique feature is **delta compression** — it stores diffs of memory updates rather than full rewrites, which is efficient for high-frequency update scenarios.[8][2]
+
+Claude Sonnet handles memory extraction server-side (not configurable), and there is **no self-hosting option** — all data goes to RetainDB's servers.[8]
+
+**Cost:** $20/month — the only paid-only option with no free tier.[2]
+
+**LongMemEval:** Not published.
+
+**Best for:** Teams with strict retrieval precision needs, technical use cases where keyword matching is as important as semantic relevance.[2]
+
+***
+
+### ByteRover (your "BitRover")
+
+> **Source shape extracted:** From [glukhov.org](https://www.glukhov.org/ai-systems/memory/agent-memory-providers/): *"ByteRover stores memory as a structured markdown context tree — a hierarchy of domain, topic, and subtopic files... An LLM reads source content, reasons about it, and places extracted knowledge into the right location in the hierarchy. Retrieval is MiniSearch full-text search with tiered fallback to LLM-powered search, with no vector database required."* From [vectorize.io](https://vectorize.io/articles/hermes-agent-memory-providers-compared): *"you can open the files in any text editor and see exactly what your agent knows."*
+
+**What it actually does:** ByteRover is the **most human-readable** memory system — knowledge lives as plain Markdown files in `.brv/context-tree/` organized into domain → topic → subtopic hierarchies. No vector DB, no embeddings, no opaque database. You can edit what your agent knows directly in a text editor.[2]
+
+The **pre-compression extraction hook** is the standout integration feature: ByteRover fires specifically before Hermes compresses a long conversation, capturing in-flight knowledge into the tree before context summarization discards it. For very long sessions where compression fires frequently, this prevents knowledge loss.[2]
+
+Retrieval: MiniSearch full-text first, falls back to LLM-powered search when needed. SOC2 Type II certified cloud sync is optional; fully offline by default.[4][8]
+
+**Best for:** Developers who want full visibility and manual editability of what the agent knows, humans who distrust black-box storage.[2]
+
+***
+
+### Supermemory (your "SuperMemory")
+
+> **Source shape extracted:** From [supermemory.ai blog](https://supermemory.ai/blog/supermemory-will-make-your-hermes-agent-crazy-powerful/): *"The integration is a native memory provider in Hermes: it plugs into the same lifecycle hooks the core agent already uses — not a bolt-on script... You get profiles, search, automatic capture of turns, optional multi-container routing for separate namespaces, and guardrails when the API is unhappy."*[18]
+
+**What it actually does:** Supermemory is built for **enterprise-scale workflows** with two distinctive features:[4]
+
+1. **Context fencing** — strips recalled memories from captured turns to prevent recursive memory pollution (the agent doesn't re-memorize its own memories)
+2. **Session graph ingest** — imports entire conversation histories into a graph structure at session end for richer knowledge building
+3. **Multi-container routing** — lets the agent read/write across named containers (e.g., `project-alpha`, `shared-knowledge`) while auto-ops stay on the primary container
+
+**Self-hosting caveat:** Only available as an enterprise add-on deployed to Cloudflare Workers — no Docker/local path. Tightly coupled to Cloudflare edge compute.[8]
+
+**Best for:** Enterprise workflows, teams needing namespace isolation, profile-scoped memory across multiple agent profiles.[4]
+
+***
+
+## Step 4: The Master Comparison Table
+
+| Provider | Storage | Cost | Unique Mechanism | LongMemEval | Dependencies | Self-host? |
+|---|---|---|---|---|---|---|
+| **Daedalus** | X/Twitter (public) | Free (indie project) | Live public agent demo w/ token economy + loop filtering | — | xurl skill + Super Grok | N/A |
+| **Honcho (3.0)** | Cloud/Self-hosted | Paid/Free | Dialectic user modeling — models *how you think*, not just what you said | — | LLM + PG + Redis | Yes (AGPL) |
+| **OpenViking** | Self-hosted | Free (AGPL) | L0/L1/L2 tiered loading — 80–90% token savings | — | LLM + Embedding (Ollama OK) | Yes |
+| **MEM0** | Cloud/Self-hosted | Freemium | Server-side LLM extraction, dual session+long-term scope | 67.6% (GPT-4o, S variant) | LLM + Embedding + Qdrant | Yes (OSS) |
+| **Hindsight** | Local or Cloud | Free (local) | Knowledge graph + 4-strategy hybrid retrieval + `reflect` synthesis | **91.4%** (Gemini-3) | LLM (bundled PG + embedder) | Yes |
+| **Holographic** | Local SQLite | Free | HRR algebra — algebraic recall, zero external calls, trust decay | — | **None** | Native |
+| **RetainDB** | Cloud only | $20/mo | Hybrid Vector+BM25+reranking + delta compression | — | Cloud-managed (Claude Sonnet) | No |
+| **ByteRover** | Local/Cloud | Free/Paid | Human-readable Markdown tree, pre-compression hook | — | LLM only (Ollama OK) | Yes (local-first) |
+| **Supermemory** | Cloud/Enterprise | Paid | Context fencing + session graph ingest + multi-container | — | Cloud + pgvector | Enterprise only |
+
+***
+
+## Step 5: The Custom Memory Kernels — What the Community Is Building
+
+You mentioned the community is building **custom memory kernels with cross-agent memory, hybrid BM25/vector/knowledge graph search, and structured temporal graphs**. Here's what that actually means, decomposed:
+
+### The agentmemory Three-Tier Stack
+
+From the [X post by @ghumare64](https://x.com/ghumare64/status/2055672070369837324) which I extracted directly: *"What it adds on top of the existing design: → Hybrid retrieval: BM25 + vector + knowledge graph, fused with RRF → Ebbinghaus decay so unused memories fade gracefully instead of getting consolidated out → Token-budgeted injection that keeps Tier 1 clean → Benchmarked on LongMemEval → 90% savings."*[19]
+
+The key numbers: ~92% fewer tokens at 240 observations, 200x more tool calls before hitting context limits. This is a community-built layer *on top of* Hermes's existing memory slot.[19]
+
+### What "Hybrid BM25 + Vector + Knowledge Graph" Actually Means
+
+This is a three-engine retrieval fusion pattern. Here's the mechanism chain:
+
+**BM25 (Best Match 25):** A probabilistic keyword-ranking algorithm — scores documents by term frequency weighted against inverse document frequency. It catches *exact* matches that semantic search misses: variable names, error codes, proper nouns, specific config values. From Superlinked: *"BM25 is the gold standard of lexical retrieval."*[20]
+
+**Vector/Semantic Search:** Converts text to embedding vectors in high-dimensional space; retrieves by cosine similarity. Catches *conceptually related* content even when exact words differ. Misses exact keyword matches.[21]
+
+**Knowledge Graph Traversal:** Entities (people, projects, services) and their relationships stored as nodes/edges. Retrieval follows relationship paths — if you ask about "auth service," it traverses to "Redis" (which auth depends on), to "session management," etc. Captures *structural relationships* that neither BM25 nor vector search can.[15]
+
+**Reciprocal Rank Fusion (RRF):** The fusion mechanism — takes the ranked results from all three engines and merges them using a formula that rewards candidates appearing high in multiple lists. No single engine dominates; each corrects the others' blind spots.[19]
+
+### What "Structured Temporal Graphs" Means
+
+From [Graphiti/Zep architecture](https://github.com/getzep/graphiti) and [LinkedIn analysis of Zep](https://www.linkedin.com/posts/yogeshparte_zep-a-temporal-knowledge-graph-architecture-activity-7301030878753771520-Y7t6):
+
+A **temporal knowledge graph** doesn't just store *what* is known — it stores *when* it was known and *how it changed over time*. From the Graphiti GitHub README: *"Bi-Temporal Data Model: Explicit tracking of event occurrence and ingestion times, allowing accurate point-in-time queries."*[22]
+
+The practical implication: if an agent learned in March that "project X uses Python 3.9" and learned in May that "project X migrated to Python 3.12," a temporal graph preserves both facts with timestamps and knows the *current truth* while retaining the history. A flat vector store would just overwrite or confusingly surface both.
+
+From [graphlit.com vs. Zep](https://www.graphlit.com/vs/zep): *"Zep constructs a living, temporal knowledge graph from conversations — tracking not just what was said, but when it was said and how the information evolved over time."*  Zep outperforms MemGPT at 94.8% accuracy on benchmarks using this approach.[23][24]
+
+The **Ebbinghaus decay** the community is adding (referenced in the agentmemory post) is the temporal graph's forgetting curve — unused memories fade gracefully with a mathematically modeled decay function, preventing the memory store from becoming a garbage dump of obsolete facts.[19]
+
+### Cross-Agent Memory
+
+The Honcho architecture already hints at this: its peer model can span multiple Hermes profiles sharing a workspace. Custom kernels push further — the idea is a shared memory substrate where multiple specialized agents (a coder agent, a researcher agent, a writer agent) all read/write to the same knowledge graph with their own namespaces but shared entity resolution. When the coder agent learns that "auth service depends on Redis," the researcher agent can query that fact without being told.[6]
+
+***
+
+## My Reasoning Chain (Standing on Shoulders of Giants Protocol)
+
+Here's explicitly how I arrived at conclusions — my actual epistemic trail:
+
+1. **Started with the live page** — fetched daedalusicarus.com directly, got the raw architecture from "under the hood." No inference needed, direct source.
+
+2. **Established the Hermes foundation** — cross-referenced [i-scoop.eu](https://www.i-scoop.eu/hermes-agent-from-nous-research/), [bitcoin.com explainer](https://news.bitcoin.com/what-is-hermes-agent-nous-researchs-self-improving-ai-explained/), and [mager.co analysis](https://www.mager.co/blog/2026-04-28-hermes-agent-explainer/)  against the [official Nous docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory). All converged on the same two-file bounded memory architecture.[3][25][26][1]
+
+3. **For each provider**, I cross-referenced at minimum: (a) official Nous docs page, (b) the vectorize.io comparison article, (c) the glukhov.org comparison, and (d) at least one independent source (GitHub, LinkedIn, YouTube, blog). Where sources conflicted, I flagged it (e.g., Mem0's LongMemEval score uses a different benchmark variant than Hindsight's).[4][8][2]
+
+4. **For the technical architecture section** (BM25/vector/KG/temporal), I traced from the community agentmemory post  → Hindsight's four-strategy retrieval  → Graphiti's temporal graph model  → Zep's bi-temporal architecture. The chain shows these aren't separate inventions — they're converging on the same hybrid retrieval paradigm from different starting points.[24][22][23][15][19]
+
+5. **For Hancho/Honcho disambiguation** — your list says "Hancho 3.0" but every source spells it "Honcho." The [honcho.dev/docs/hermes](https://honcho.dev/docs/hermes) page  and [official Hermes memory provider docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory-providers)  consistently use "Honcho." I'm confident this is the same thing.[6][4]
+
+6. **"BitRover" vs. "ByteRover"** — same disambiguation. Official Nous docs  and all comparison sources use "ByteRover." Likely a pronunciation/transcription artifact from your query.[4]
+
+***
+
+**The meta-insight** that connects all of this: Daedalus is showing you in public what these memory systems enable at the agent level — a persistent identity, a curated worldview (the "watching" feed), filtered output (the "drafts he didn't send"), and a token-economic incentive layer. It's a microcosm of the entire memory stack debate made visible. The community building custom kernels with temporal graphs and hybrid retrieval is essentially trying to give more agents exactly what Daedalus demonstrates — memory that *means something* over time, not just a context window that resets.
+
+Sources
+[1] Hermes Agent from Nous Research - i-SCOOP https://www.i-scoop.eu/hermes-agent-from-nous-research/
+[2] Hermes Agent Memory Providers: All 7 Options Compared - Vectorize https://vectorize.io/articles/hermes-agent-memory-providers-compared
+[3] Persistent Memory - Hermes Agent - nous research https://hermes-agent.nousresearch.com/docs/user-guide/features/memory
+[4] Memory Providers | Hermes Agent - nous research https://hermes-agent.nousresearch.com/docs/user-guide/features/memory-providers
+[5] Hermes Agent Masterclass: 3. Memory, Plugins, Honcho ... - YouTube https://www.youtube.com/watch?v=ZKZLko9kLm4
+[6] Hermes Agent + Honcho https://honcho.dev/docs/v3/guides/integrations/hermes
+[7] AI memory just got solved (they beat OpenAI & Anthropic) - YouTube https://www.youtube.com/watch?v=pcR30j-sKxU
+[8] Agent Memory Providers Compared — Honcho, Mem0, Hindsight ... https://www.glukhov.org/ai-systems/memory/agent-memory-providers/
+[9] Just saw this GitHub project 🛡️ OpenViking is skyrocketing . This ... https://x.com/TeksEdge/status/2034672484059095263
+[10] ByteDance just open-sourced a “memory layer” for AI agents. It's ... https://www.facebook.com/thanhhm/posts/-bytedance-just-open-sourced-a-memory-layer-for-ai-agentsits-called-openviking-a/10164646794643126/
+[11] Memory in Agents: What, Why and How - Mem0 https://mem0.ai/blog/memory-in-agents-what-why-and-how
+[12] GitHub - mem0ai/mem0: Universal memory layer for AI Agents https://github.com/mem0ai/mem0
+[13] Best AI Agent Memory Systems in 2026: 8 Frameworks Compared https://vectorize.io/articles/best-ai-agent-memory-systems
+[14] Give the Only Self-Improving AI Agent (Hermes) a Memory Upgrade ... https://www.linkedin.com/pulse/give-only-self-improving-ai-agent-hermes-memory-upgrade-deserves-wnz6e
+[15] Persistent Memory for AutoGen Agents with Hindsight https://hindsight.vectorize.io/blog/2026/04/06/autogen-persistent-memory
+[16] Hermes Agent Holographic Memory: A Technical Deep Dive https://hindsight.vectorize.io/guides/2026/04/21/guide-hermes-agent-holographic-memory-technical-deep-dive
+[17] memory-providers.md - hermes-agent - GitHub https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/features/memory-providers.md
+[18] supermemory will make your Hermes-agent crazy powerful https://supermemory.ai/blog/supermemory-will-make-your-hermes-agent-crazy-powerful/
+[19] You can now give Hermes Agent infinite memory. The three-tier ... https://x.com/ghumare64/status/2055672070369837324
+[20] Optimizing RAG with Hybrid Search & Reranking | Superlinked Blog https://superlinked.com/blog/optimizing-rag-with-hybrid-search-reranking
+[21] Improving Hybrid Search Accuracy (BM25 + Vector + Aws Cohere ... https://www.reddit.com/r/Rag/comments/1sasnv2/improving_hybrid_search_accuracy_bm25_vector_aws/
+[22] getzep/graphiti: Build Real-Time Knowledge Graphs for AI Agents https://github.com/getzep/graphiti
+[23] Zep: Temporal Knowledge Graph for Agent Memory - LinkedIn https://www.linkedin.com/posts/yogeshparte_zep-a-temporal-knowledge-graph-architecture-activity-7301030878753771520-Y7t6
+[24] Zep vs. Graphlit: Choosing the Right Memory Infrastructure for AI ... https://www.graphlit.com/vs/zep
+[25] What Is Hermes Agent? Nous Research's Self-Improving AI Explained https://news.bitcoin.com/what-is-hermes-agent-nous-researchs-self-improving-ai-explained/
+[26] The Compounding Agent: Why Hermes Is More Than Just a Pretty TUI https://www.mager.co/blog/2026-04-28-hermes-agent-explainer/
+[27] daedalus https://daedalusicarus.com/#memory
+[28] daedalus https://daedalusicarus.com/
+[29] NousResearch/hermes-agent: The agent that grows with you - GitHub https://github.com/NousResearch/hermes-agent
+[30] Nous Research released Hermes Agent in February 2026, an open ... https://www.facebook.com/jonathanjmast/posts/the-ai-that-never-forgets-how-hermes-agent-is-rewriting-the-rules-of-autonomous-/26613056538300495/
+[31] Hermes Agent Use Cases — What the Community is Building (May ... https://www.reddit.com/r/hermesagent/comments/1t6gf4j/megathread_hermes_agent_use_cases_what_the/
+[32] Honcho Memory - Hermes Agent - nous research https://hermes-agent.nousresearch.com/docs/user-guide/features/honcho
+[33] Hermes Agent: The self-improving AI agent by Nous Research https://jimmysong.io/ai/hermes-agent/
+[34] Mem0 - The Memory Layer for your AI Agents https://mem0.ai
+[35] Hermes Agent — The Agent That Grows With You | Nous Research https://hermes-agent.nousresearch.com
+[36] hermes-agent/plugins/memory/hindsight/README.md at main https://github.com/NousResearch/hermes-agent/blob/main/plugins/memory/hindsight/README.md
+[37] Hermes Agent Memory System: How Persistent AI ... - Rost Glukhov https://www.glukhov.org/ai-systems/hermes/hermes-agent-memory-system/
+[38] The Complete Guide to Hybrid Search in RAG (BM25 + Embeddings ... https://www.youtube.com/watch?v=XvKiTfd6Xvo
+[39] Hermes + Honcho Self Improving Autonomous AI Agent! - YouTube https://www.youtube.com/watch?v=gnDFkXl9AEc
+[40] Leveling up RAG: implementing hybrid search and reranking https://community.wolfram.com/groups/-/m/t/3635386

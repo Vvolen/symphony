@@ -26,7 +26,7 @@ check_no_secret_placeholders() {
   if rg -n --hidden \
     --glob '!*.png' --glob '!*.mp4' --glob '!*.jpg' --glob '!*.jpeg' \
     --glob '!*.gif' --glob '!scripts/check' \
-    '(sk-[A-Za-z0-9_-]{20,}|lin_api_[A-Za-z0-9_-]+|FIRECRAWL_API_KEY=.+\\S|BEGIN (RSA|OPENSSH|EC|PRIVATE) KEY)' \
+    '(sk-[A-Za-z0-9_-]{20,}|lin_api_[A-Za-z0-9_-]+|FIRECRAWL_API_KEY=\S|BEGIN (RSA|OPENSSH|EC|PRIVATE) KEY)' \
     .; then
     echo "Potential secret-like content found. Review before committing." >&2
     return 1
@@ -47,6 +47,13 @@ check_required_docs() {
     docs/systems/INDEX.md
     docs/systems/repo-hydration-architecture.md
     docs/systems/github-actions-and-supabase-playbook.md
+    docs/systems/icm-operating-model.md
+    docs/library/INDEX.md
+    docs/research/2026-06-01-icm-filesystem-as-cognition.md
+    workspaces/README.md
+    workspaces/_template-icm/identity.md
+    workspaces/_template-icm/routing.md
+    bus/README.md
     .github/copilot-instructions.md
     .github/workflows/research-hub-check.yml
     scripts/memory-check

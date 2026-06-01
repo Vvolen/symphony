@@ -16,12 +16,17 @@ This is the shared memory map for agents working in this repository.
 - Governance: `docs/governance/`
 - Shared-memory architecture: `docs/governance/shared-memory-architecture.md`
 - Handoff queue: `docs/memory/handoff.md`
+- Agent bus (Copilot↔Codex): `bus/`
+- Source corpus / library: `docs/library/INDEX.md`
+- ICM operating model: `docs/systems/icm-operating-model.md`
+- Workspace template: `workspaces/_template-icm/`
 - Decision log: `docs/memory/decisions/`
 - Run journals: `docs/memory/runs/`
 - Systems catalog: `docs/systems/INDEX.md`
 
 ## Recent runs
 
+- 2026-06-01: ingest user corpus, stand up ICM operating model + workspace template, open agent bus (see `runs/2026-06-01-icm-ingest-and-bus.md`)
 - 2026-05-29: mine Copilot for Eclipse and add systems catalog (see `runs/2026-05-29-copilot-eclipse-systems-catalog.md`)
 - 2026-05-24: bootstrap shared-memory framework (see `runs/2026-05-24-shared-memory-bootstrap.md`)
 

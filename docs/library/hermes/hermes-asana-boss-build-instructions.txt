@@ -1,0 +1,426 @@
+Here's the full agent onboarding and build instructions for Asana:
+
+Hermes Project B.O.S.S. — Asana Agent Build Instructions
+What Asana is and how it works
+Asana is a work management platform organized around a work graph: interconnected objects including tasks, projects, portfolios, goals, and users. Everything you build lives inside this graph and can be referenced, linked, and automated.
+
+Core object hierarchy:
+
+	•	Workspace/Organization — the top-level container
+	•	Projects — collections of tasks, organized into sections
+	•	Tasks — the atomic unit of work; can have subtasks, custom fields, assignees, due dates, dependencies, and comments
+	•	Portfolios — track multiple projects in one view
+	•	Goals — strategic objectives linked to projects and portfolios
+	•	Rules — if/then automations that trigger on field changes, task events, etc.
+
+How to authenticate
+All API calls require a Personal Access Token (PAT) or OAuth2 token.
+
+Authorization: Bearer {YOUR_PERSONAL_ACCESS_TOKEN}
+Content-Type: application/json
+Base URL: [https://app.asana.com/api/1.0 !UNVERIFIED!](https://app.asana.com/api/1.0)
+Get your PAT from: Asana → Profile Settings → Apps → Developer Apps → Personal Access Token.
+
+Build sequence — execute in this order
+STEP 1 — Get your workspace and project GIDs
+GET /workspaces
+Returns your workspace GID. Store it — you'll need it for everything.
+
+GET /projects?workspace={workspace_gid}
+Find or create the Hermes project. If creating:
+
+POST /projects
+{
+  "data": {
+    "name": "Project B.O.S.S. — Hermes Solana Edge Stack",
+    "workspace": "{workspace_gid}",
+    "default_view": "list",
+    "notes": "Canonical build project for Hermes v1. Governed by SOSOG protocol."
+  }
+}
+Store the returned gid as {project_gid}.
+
+STEP 2 — Create all sections
+Sections organize tasks into workflow stages. Create these in order:
+
+POST /sections
+{
+  "data": {
+    "name": "New Candidates",
+    "project": "{project_gid}"
+  }
+}
+Repeat for each section:
+
+	•	New Candidates
+	•	Evidence Queue
+	•	Anti-Alpha Gate
+	•	Awaiting Human Review
+	•	Approved
+	•	Rejected
+	•	Session Logs
+	•	Phase 0 — Foundation
+	•	Phase 1 — 72h Evidence Demo
+	•	Phase 2 — Backtest + Replay
+	•	Phase 3 — Agent Governance
+	•	Phase 4 — Shadow/Probe Execution
+	•	Phase 5 — Restricted Live
+
+Store each section GID.
+
+STEP 3 — Create all custom fields
+Custom fields must be created at the workspace level first, then attached to the project.
+
+Create each field:
+POST /custom_fields
+{
+  "data": {
+    "workspace": "{workspace_gid}",
+    "name": "SOSOG Confidence",
+    "resource_subtype": "enum",
+    "enum_options": [
+      {"name": "Verified", "color": "green"},
+      {"name": "Strong Inference", "color": "blue"},
+      {"name": "Plausible", "color": "yellow"},
+      {"name": "Unsupported", "color": "red"}
+    ]
+  }
+}
+All fields to create:
+Field name	resource_subtype	Options / range
+SOSOG Confidence	enum	Verified / Strong Inference / Plausible / Unsupported
+Allowed Use	enum	Canonical / Implementation / Prototype / Research Only / Do Not Use
+Risk Level	enum	Critical / High / Medium / Low
+Gate Status	enum	Pending / Pass / Soft Warning / Hard Fail
+Signal Family	enum	Persistence / Second Leg / Wallet Cluster / Liquidity Migration / KOL Rotation / Launch Quality / Execution Quality
+Autonomy Level	enum	L0 / L1 / L2 / L3 / L4 / L5
+Schema Valid	enum	Yes / No / Not Applicable
+Agent Trust Score	number	precision: 2, min: 0, max: 1
+Evidence Completeness	number	precision: 0, min: 0, max: 100
+Review Required	enum	Yes / No
+After creating each field, attach it to the project:
+
+POST /projects/{project_gid}/addCustomFieldSetting
+{
+  "data": {
+    "custom_field": "{custom_field_gid}",
+    "is_important": true
+  }
+}
+Store all field GIDs and their enum option GIDs — you'll need them for rules and task creation.
+
+STEP 4 — Create all tasks with correct fields and sections
+For each task, use:
+
+POST /tasks
+{
+  "data": {
+    "name": "Task name",
+    "projects": ["{project_gid}"],
+    "memberships": [{"project": "{project_gid}", "section": "{section_gid}"}],
+    "assignee": "{user_gid}",
+    "due_on": "YYYY-MM-DD",
+    "notes": "Full task description here",
+    "custom_fields": {
+      "{risk_level_field_gid}": "{high_enum_option_gid}",
+      "{gate_status_field_gid}": "{pending_enum_option_gid}"
+    }
+  }
+}
+To get the assignee GID (Nick Carter):
+
+GET /users/me
+
+STEP 5 — Set up task dependencies
+After creating the 8-step gate sequence tasks, chain them:
+
+POST /tasks/{dependent_task_gid}/addDependencies
+{
+  "data": {
+    "dependencies": ["{prerequisite_task_gid}"]
+  }
+}
+Gate chain order:
+
+	1.	Source freshness check
+	2.	Evidence bundle created ← depends on 1
+	3.	Anti-alpha gate ← depends on 2
+	4.	Liquidity replay / slippage simulation ← depends on 3
+	5.	Trade card schema validation ← depends on 4
+	6.	Human approval ← depends on 5
+	7.	Shadow execution ← depends on 6
+	8.	Postmortem + session log ← depends on 7
+
+STEP 6 — Create rules (via Workflow Builder)
+Rules cannot be created via the standard REST API — they must be built in the Asana UI (Customize → Rules) or via Asana AI Studio if you have access. However, agents can trigger rule-like behavior by:
+	1.	Watching for webhook events (field changes, task completions)
+	2.	Responding programmatically via API (updating fields, creating subtasks, posting comments)
+
+Set up webhooks to replicate rule behavior:
+
+POST /webhooks
+{
+  "data": {
+    "resource": "{project_gid}",
+    "target": "[https://your-agent-endpoint.com/asana-webhook !UNVERIFIED!](https://your-agent-endpoint.com/asana-webhook)",
+    "filters": [
+      {"resource_type": "task", "action": "changed", "fields": ["custom_fields"]},
+      {"resource_type": "task", "action": "completed"}
+    ]
+  }
+}
+Webhook event handlers your agents should implement:
+Event	Agent action
+Gate Status → Hard Fail	POST new subtask "Generate reject_card"; move task to Rejected section
+SOSOG Confidence → Unsupported	PATCH Allowed Use → Do Not Use; POST comment; PATCH Review Required → Yes
+Agent Trust Score < 0.35	PATCH Autonomy Level → L0; POST comment "Trust threshold breached"
+Task completed	POST subtask "Session Log — [task name]" with session log template
+Review Required → Yes	PATCH assignee → Nick Carter GID; move to Awaiting Human Review section
+Schema Valid → No	PATCH Gate Status → Hard Fail; POST comment "Schema validation failed"
+STEP 7 — Create approval tasks
+Approval tasks are a special task subtype:
+
+POST /tasks
+{
+  "data": {
+    "name": "APPROVAL: Trade card human signoff — [candidate name]",
+    "resource_subtype": "approval",
+    "projects": ["{project_gid}"],
+    "memberships": [{"project": "{project_gid}", "section": "{awaiting_review_section_gid}"}],
+    "assignee": "{nick_carter_gid}",
+    "custom_fields": {
+      "{risk_level_field_gid}": "{critical_enum_gid}",
+      "{gate_status_field_gid}": "{pending_enum_gid}"
+    }
+  }
+}
+Create approval task templates for:
+
+	1.	Trade card human signoff
+	2.	Memory promotion approval
+	3.	Agent autonomy upgrade
+	4.	Signal family promotion
+	5.	SOSOG canonical promotion
+
+Check approval status:
+
+GET /tasks/{approval_task_gid}
+Returns approval_status: pending / approved / rejected / changes_requested
+
+STEP 8 — Create the portfolio
+POST /portfolios
+{
+  "data": {
+    "name": "Hermes — Project B.O.S.S. Master Portfolio",
+    "workspace": "{workspace_gid}",
+    "color": "dark-purple"
+  }
+}
+Add projects to portfolio:
+
+POST /portfolios/{portfolio_gid}/addItem
+{
+  "data": {
+    "item": "{project_gid}"
+  }
+}
+
+STEP 9 — Session log protocol
+Every time a task is completed (detected via webhook), your agent should immediately create a subtask using this template:
+
+POST /tasks
+{
+  "data": {
+    "name": "Session Log — [Agent Name] — [Task Name] — [Date]",
+    "parent": "{completed_task_gid}",
+    "memberships": [{"project": "{project_gid}", "section": "{session_logs_section_gid}"}],
+    "notes": "## Session Log\n\n### What I did\n\n### What I learned\n\n### What surprised me\n\n### What I would do differently\n\n### Trust delta\n\n### Memory promotion candidates\n\n### Open questions"
+  }
+}
+
+Key rules agents must follow
+	1.	Never skip a gate. Check dependency status before marking any task complete.
+	2.	Always post a session log on task completion — no exceptions.
+	3.	Never promote a claim marked Unsupported — hard block.
+	4.	Any capital-risk action must create an approval task and wait for approval_status: approved before proceeding.
+	5.	Agent Trust Score below 0.35 = L0 only. No trade drafts, no promotions.
+	6.	All comments are append-only. Never edit a prior comment — post a new one.
+	7.	Store all GIDs returned from POST calls — you'll need them for linking, dependencies, and updates.
+
+Useful API endpoints cheat sheet
+Action	Endpoint
+Get current user	GET /users/me
+List projects	GET /projects?workspace={gid}
+Create task	POST /tasks
+Update task	PUT /tasks/{gid}
+Add comment	POST /tasks/{gid}/stories with {"data":{"text":"..."}}
+Get task	GET /tasks/{gid}
+Add dependency	POST /tasks/{gid}/addDependencies
+Move to section	POST /sections/{section_gid}/addTask
+Create custom field	POST /custom_fields
+Attach field to project	POST /projects/{gid}/addCustomFieldSetting
+Create webhook	POST /webhooks
+Create portfolio	POST /portfolios
+Add to portfolio	POST /portfolios/{gid}/addItem
+Get approval status	GET /tasks/{gid} → approval_status
+Full API docs: **https://developers.asana.com/docs**
+
+That's the full picture. Your agents have everything they need to build the entire Hermes governance layer in Asana programmatically. Want me to now draft the Phase 1 task specs so those are ready to queue up once Phase 0 is confirmed complete?
+
+Here's everything additional your agents should know:
+
+Supplemental Agent Instructions — Asana Hermes Build
+Webhooks — full setup
+Asana webhooks require a handshake on first connection. When Asana sends the initial POST to your endpoint, it includes an X-Hook-Secret header. Your endpoint must echo it back immediately:
+
+# Handshake handler (FastAPI example)
+@app.post("/asana-webhook")
+async def webhook(request: Request):
+    secret = request.headers.get("X-Hook-Secret")
+    if secret:
+        return Response(headers={"X-Hook-Secret": secret})
+    
+    payload = await request.json()
+    await handle_events(payload["events"])
+    return {"ok": True}
+Webhook best practices:
+
+	•	Respond in under 10 seconds or Asana will retry
+	•	Use a queue (Redis, SQS, etc.) — receive fast, process async
+	•	Asana will deactivate webhooks after repeated failures — build a health check that re-registers if inactive
+	•	Verify the X-Hook-Signature header on every event for security
+
+Re-register webhook if deactivated:
+
+GET /webhooks?workspace={workspace_gid}
+# Check "active": false → re-POST to /webhooks
+
+Pagination — critical for large datasets
+All list endpoints are paginated. Always handle next_page:
+
+def get_all(endpoint, params):
+    results = []
+    params["limit"] = 100
+    while True:
+        r = requests.get(endpoint, params=params, headers=headers)
+        data = r.json()
+        results.extend(data["data"])
+        if not data.get("next_page"):
+            break
+        params["offset"] = data["next_page"]["offset"]
+    return results
+
+Rate limits — avoid getting blocked
+	•	Asana enforces ~150 requests/minute per token
+	•	On 429 Too Many Requests, respect the Retry-After header
+	•	Use exponential backoff:
+import time
+
+def api_call_with_backoff(fn, retries=5):
+    for i in range(retries):
+        r = fn()
+        if r.status_code == 429:
+            time.sleep(2 ** i)
+            continue
+        return r
+    raise Exception("Rate limit exceeded after retries")
+
+Batch operations
+For bulk task creation (e.g. spinning up all Phase 0 tasks at once), use the batch API to reduce round trips:
+
+POST /batch
+{
+  "data": {
+    "actions": [
+      {"method": "post", "relative_path": "/tasks", "data": {...}},
+      {"method": "post", "relative_path": "/tasks", "data": {...}}
+    ]
+  }
+}
+Max 10 actions per batch request.
+
+Dashboard — what agents should know
+Asana dashboards live inside portfolios and are built from saved report charts. Agents cannot create dashboard charts via API — this is UI-only. However, agents can maximize dashboard usefulness by:
+
+1. Keeping custom fields clean and consistent
+Charts are only as good as the data. Agents must always set Gate Status, Risk Level, SOSOG Confidence, and Signal Family on every task — never leave them blank.
+
+2. Recommended chart types to build manually:
+Panel	Chart type	Field to track
+Gate funnel	Bar chart	Gate Status
+Agent trust scoreboard	Number chart	Agent Trust Score
+Signal family health	Pie chart	Signal Family
+Autonomy ladder	Bar chart	Autonomy Level
+Approval queue	Task list	Review Required = Yes
+Session log activity	Number chart	Tasks in Session Logs section
+Source freshness failures	Task list	Gate Status = Hard Fail
+3. For real-time agent monitoring outside Asana, pipe Asana webhook events into Grafana via a simple bridge — this gives you the live Prometheus-style dashboards the build spec calls for, while Asana remains the governance and task layer.
+
+Project templates — save the gate chain as a template
+Once the 8-step dependency chain is built, save it as a project template so any new signal family spins up with the full gate sequence pre-wired:
+
+POST /project_templates
+{
+  "data": {
+    "project": "{project_gid}",
+    "name": "Hermes Signal Family — Gate Chain Template",
+    "team": "{team_gid}"
+  }
+}
+Instantiate for each new signal family:
+
+POST /project_templates/{template_gid}/instantiateProject
+{
+  "data": {
+    "name": "Signal Family — Persistence Anomaly",
+    "workspace": "{workspace_gid}"
+  }
+}
+
+Subtask depth — important constraint
+Asana supports subtasks, but only one level of subtasks is reliably visible in project views. For the session log system:
+
+	•	Keep session logs as subtasks of their parent task 
+	•	￼
+	•	Also add them to the Session Logs section via memberships so they're visible in the main project view 
+	•	￼
+	•	Don't go deeper than 2 levels or they'll disappear from dashboards
+
+Enum option GIDs — cache them
+When you create custom fields, the API returns enum option GIDs. Cache these immediately — you'll need them every time you set a field value on a task. Losing them means extra API calls to look them up.
+
+# Cache structure to store on first build
+FIELD_GIDS = {
+    "gate_status": {
+        "field_gid": "...",
+        "options": {
+            "Pending": "...",
+            "Pass": "...",
+            "Soft Warning": "...",
+            "Hard Fail": "..."
+        }
+    },
+    # ... all other fields
+}
+
+Asana AI Studio — worth knowing
+If the workspace has AI Studio access, agents can trigger AI-powered workflows (smart rules with LLM steps) directly from Asana. This is the closest native equivalent to autonomous agent orchestration inside Asana. Currently on the Free AI Studio tier — worth checking what's available as the build scales.
+
+Error handling — what agents must catch
+Error	Meaning	Action
+403 Forbidden	Missing permissions or wrong workspace	Check token scope and workspace GID
+404 Not Found	GID is wrong or object deleted	Re-fetch GID, log and skip
+412 Precondition Failed	Stale data / optimistic lock	Re-fetch and retry
+429 Too Many Requests	Rate limited	Exponential backoff
+500 / 503	Asana server error	Retry with backoff; alert if persistent
+Final checklist before agents start building
+	•	☐PAT generated and stored securely (not hardcoded)
+	•	☐Workspace GID fetched and cached
+	•	☐Webhook endpoint live, handshake tested
+	•	☐All field GIDs and enum option GIDs cached after creation
+	•	☐Rate limit handler active
+	•	☐Session log subtask creation tested on one task
+	•	☐Approval task status polling tested
+	•	☐Re-registration logic for deactivated webhooks in place
+
+That's the complete picture. Ready to draft Phase 1 tasks now?
