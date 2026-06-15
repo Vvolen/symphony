@@ -13,19 +13,19 @@ The immediate recommendation is to keep Symphony intact, add a repo-level resear
 
 ## Source register
 
-| Source | Date | Type | Why it matters |
-| --- | --- | --- | --- |
-| OpenAI Codex Cloud environments | Current docs accessed 2026-05-19 | Primary docs | Defines setup scripts, env vars, secrets, cache, and cloud task lifecycle. |
-| OpenAI Codex Skills docs | Current docs accessed 2026-05-19 | Primary docs | Defines skills, progressive disclosure, repo/user/admin/system skill locations, and best practices. |
-| OpenAI Codex MCP docs | Current docs accessed 2026-05-19 | Primary docs | Defines MCP configuration, env forwarding, HTTP/stdio transports, tool allow/deny lists, and approval modes. |
-| OpenAI Codex use cases | Current docs accessed 2026-05-19 | Primary docs | Establishes Codex as useful for data analysis, research, durable goals, skills, and production-system work. |
-| OpenAI Codex releases | 2026-05-18 latest release visible | Primary repository release page | Shows active app-server, environment, daemon, plugin, and goal-related development. |
-| OpenAI Skills catalog | Current GitHub repo accessed 2026-05-19 | Primary repository | Shows the official skill catalog and installation model. |
-| OpenAI Codex MCP + Agents SDK cookbook | Current docs accessed 2026-05-19 | Primary cookbook | Demonstrates Codex CLI exposed as MCP for single- and multi-agent workflows with traceability. |
-| Firecrawl Hermes guide | 2026-04-24 | Vendor guide | Describes Hermes persistence, Firecrawl backend, MCP extension points, skills, and messaging gateways. |
-| Hermes release digest | May 2026 | Release aggregation | Gives recent Hermes v0.12 self-improvement loop and cold-start changes; treat as secondary until verified against upstream commits. |
-| Skilldex paper | 2026-04 | Research paper | Frames skills as runtime packages with registries, conformance scoring, skillsets, and MCP support. |
-| Confidential computing for agents survey | 2026-05 | Research paper | Frames the threat surface for agents with secrets, memory, peer delegation, MCP/A2A, and exfiltration risks. |
+| Source | Date | Type | Link / locator | Why it matters |
+| --- | --- | --- | --- | --- |
+| OpenAI Codex Cloud environments | Current docs accessed 2026-05-19 | Primary docs | https://developers.openai.com/codex/ | Defines setup scripts, env vars, secrets, cache, and cloud task lifecycle. |
+| OpenAI Codex Skills docs | Current docs accessed 2026-05-19 | Primary docs | https://developers.openai.com/codex/skills/ | Defines skills, progressive disclosure, repo/user/admin/system skill locations, and best practices. |
+| OpenAI Codex MCP docs | Current docs accessed 2026-05-19 | Primary docs | https://developers.openai.com/codex/mcp/ | Defines MCP configuration, env forwarding, HTTP/stdio transports, tool allow/deny lists, and approval modes. |
+| OpenAI Codex use cases | Current docs accessed 2026-05-19 | Primary docs | https://developers.openai.com/codex/ | Establishes Codex as useful for data analysis, research, durable goals, skills, and production-system work. |
+| OpenAI Codex releases | 2026-05-18 latest release visible | Primary repository release page | https://github.com/openai/codex/releases | Shows active app-server, environment, daemon, plugin, and goal-related development. |
+| OpenAI Skills catalog | Current GitHub repo accessed 2026-05-19 | Primary repository | https://github.com/openai/skills | Shows the official skill catalog and installation model. |
+| OpenAI Codex MCP + Agents SDK cookbook | Current docs accessed 2026-05-19 | Primary cookbook | https://cookbook.openai.com/ | Demonstrates Codex CLI exposed as MCP for single- and multi-agent workflows with traceability. |
+| Firecrawl Hermes guide | 2026-04-24 | Vendor guide | https://www.firecrawl.dev/ | Describes Hermes persistence, Firecrawl backend, MCP extension points, skills, and messaging gateways. |
+| Hermes release digest | May 2026 | Release aggregation | `/home/runner/work/symphony/symphony/docs/library/harness-and-long-horizon/deep-research-report-3.md` | Gives recent Hermes v0.12 self-improvement loop and cold-start changes; treat as secondary until verified against upstream commits. |
+| Skilldex paper | 2026-04 | Research paper | `/home/runner/work/symphony/symphony/docs/library/harness-and-long-horizon/deep-research-report-3.md` | Frames skills as runtime packages with registries, conformance scoring, skillsets, and MCP support. |
+| Confidential computing for agents survey | 2026-05 | Research paper | `/home/runner/work/symphony/symphony/docs/library/harness-and-long-horizon/deep-research-report-3.md` | Frames the threat surface for agents with secrets, memory, peer delegation, MCP/A2A, and exfiltration risks. |
 
 ## Claims and evidence
 

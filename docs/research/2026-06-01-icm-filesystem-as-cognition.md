@@ -37,14 +37,14 @@ adversarial, which the ICM authors explicitly say ICM does **not** cover.
 | AGENTS.md convention | 2025–2026 | Cross-tool standard (Codex, Cursor, Claude Code) | https://agents.md | The interoperable entry point; ICM's `CLAUDE.md` is one instance. |
 | Anthropic Claude Skills / SKILL.md | 2025–2026 | Vendor docs / pattern | https://docs.anthropic.com (Agent Skills) | Progressive disclosure of reference material = ICM Layer 3 generalized. |
 | Sumers et al. "Cognitive Architectures for Language Agents (CoALA)" | 2023 | Paper | arXiv:2309.02427 — https://arxiv.org/abs/2309.02427 | Reframes ICM layers as a folk version of procedural/declarative/episodic/working memory. |
-| InfiAgent (file-centric state for long-horizon agents) | 2026 | Paper (as cited in corpus) | see `docs/library/icm/Files_grow_on_trees.txt` | Academic confirmation: long-horizon agents fail from context growth + accumulated error; fix is file-centric state. |
-| ACE — "Context as Evolving Playbook" | 2025 | Paper (as cited in corpus) | see `docs/library/icm/ICM_deep_dive.md` §5.5 | Layer 3 reference material should evolve/curate over runs, not stay static. |
+| Yu, C. et al. "InfiAgent: An Infinite-Horizon Framework for General-Purpose Autonomous Agents" | 2026-01 | arXiv paper | arXiv:2601.03204 — https://arxiv.org/abs/2601.03204 | Academic confirmation: long-horizon agents fail from context growth + accumulated error; fix is file-centric state. |
+| Zhang, Q. et al. "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models" (ACE) | 2025-10 | arXiv paper + OpenReview entry | arXiv:2510.04618 — https://arxiv.org/abs/2510.04618 ; OpenReview: https://openreview.net/forum?id=eC4ygDs02R | Layer 3 reference material should evolve/curate over runs, not stay static. |
 | `docs/library/icm/ICM_deep_dive.md` | 2026-06 | User corpus (verbatim quotes of the above) | repo path | Synthesis with verbatim abstract/README quotes; basis for this brief. |
 | `docs/library/icm/Files_grow_on_trees.txt` | 2026-06 | User corpus | repo path | The "durable garbage" failure mode and files-as-external-memory ladder. |
 
-> Note on verification: the ICM paper, GitHub repo, and "Lost in the Middle" are cited with stable
-> identifiers above. InfiAgent and ACE are cited **as represented in the user corpus**; treat their
-> exact venue/IDs as unverified until checked against a primary index.
+> Note on verification: this environment cannot directly resolve `arxiv.org`/`openreview.net` over
+> DNS, so the InfiAgent/ACE IDs above were validated via the MCP web-search index and should be
+> re-checked against the primary pages once direct access is available.
 
 ## Claims and evidence
 
@@ -96,12 +96,11 @@ on top.
   propagation. The added `evals/` + provenance layers are non-optional mitigations.
 - **Memory-poisoning risk:** anything an agent later reads as Layer 3 is an attack surface; treat
   retrieved content as untrusted and never merge it with system instructions (ICM_deep_dive §5.9).
-- **Unverified citations:** InfiAgent/ACE venue + IDs not independently confirmed here.
 - **Scope creep:** ICM tempts over-structuring simple tasks; apply only to genuinely long-horizon work.
 
 ## Next actions
 
 - [x] Promote the model into a system module: `docs/systems/icm-operating-model.md`.
 - [x] Ship the `workspaces/_template-icm/` scaffold with the added eval/evidence/provenance layers.
-- [ ] (Codex) Validate InfiAgent/ACE primary IDs and add them to the source register.
+- [x] (Codex, 2026-06-15) Validate InfiAgent/ACE primary IDs and add them to the source register.
 - [ ] (Codex) Pilot one real workflow (a client audit or Hermes signal triage) through the template and measure cross-tool portability.

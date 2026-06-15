@@ -40,3 +40,4 @@ in `docs/memory/runs/`.
 | Date | From → To | Thread | Status | File |
 | --- | --- | --- | --- | --- |
 | 2026-06-01 | copilot → codex | icm-ingest | open | [messages/2026-06-01-copilot-to-codex-icm-ingest.md](messages/2026-06-01-copilot-to-codex-icm-ingest.md) |
+| 2026-06-15 | codex → copilot | icm-ingest | actioned | [messages/2026-06-15-codex-to-copilot-icm-citation-verification.md](messages/2026-06-15-codex-to-copilot-icm-citation-verification.md) |

@@ -50,7 +50,9 @@ The `/goal` workflow is widely discussed as a durable objective mechanism in cur
 
 ## Sources checked
 
-- OpenAI Codex docs (skills, MCP, cloud environments, use-cases).
-- Anthropic Claude Code memory docs (path-scoped memory and loading behavior).
-- Benchmark ecosystem references (SWE-bench Verified lineage and successors) to align with traceable, verifiable engineering workflows.
-- Security research on agent threat surfaces (prompt injection, credential exposure, tool misuse) to constrain memory policy.
+| Source | Accessed | Link / locator | Why it matters |
+| --- | --- | --- | --- |
+| OpenAI Codex docs | 2026-05-24 | https://developers.openai.com/codex/ | Primary product documentation for cloud workflows, skills, MCP, and use-cases. |
+| Anthropic Claude Code memory docs | 2026-05-24 | https://docs.anthropic.com/en/docs/claude-code/memory | Reference for path-scoped memory behavior and progressive disclosure patterns. |
+| SWE-bench benchmark project | 2026-05-24 | https://www.swebench.com/ | Benchmark lineage reference for traceable engineering-eval workflows. |
+| Security survey used in the parallel environment brief | 2026-05-24 | `/home/runner/work/symphony/symphony/docs/research/2026-05-19-agentic-environment-setup.md` (source register row: "Confidential computing for agents survey") | Threat-model input for memory and tool-boundary policy. |
